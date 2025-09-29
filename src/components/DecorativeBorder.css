@@ -1,8 +1,8 @@
-/* Decorative Borders - Ornate Design */
+/* Decorative Borders - Glowing Circle Design */
 .decorative-border {
   position: fixed;
   top: 0;
-  width: 80px; /* Wider for ornate design */
+  width: 80px;
   height: 100vh;
   z-index: 1000;
   background: linear-gradient(180deg, 
@@ -47,14 +47,14 @@
 .border-pattern {
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 1000"><defs><pattern id="ornate" x="0" y="0" width="80" height="200" patternUnits="userSpaceOnUse"><g fill="%23FFD700" stroke="%23000" stroke-width="1"><!-- Central ornate design --><g transform="translate(40, 100)"><!-- Main central diamond --><path d="M0 0 L8 8 L0 16 L-8 8 Z" fill="%23000"/><!-- Top diamond --><path d="M0 -8 L4 -4 L0 0 L-4 -4 Z" fill="%23000"/><!-- Bottom diamond --><path d="M0 16 L4 20 L0 24 L-4 20 Z" fill="%23000"/><!-- Left swirl --><path d="M-8 8 Q-12 4 -16 8 Q-12 12 -8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="-12" cy="6" r="1.5" fill="%23000"/><!-- Right swirl --><path d="M8 8 Q12 4 16 8 Q12 12 8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="1.5" fill="%23000"/><!-- Horizontal lines with diamonds --><g transform="translate(0, 50)"><path d="M-20 0 L-5 0" stroke="%23000" stroke-width="2"/><path d="M5 0 L20 0" stroke="%23000" stroke-width="2"/><path d="M-8 0 L-6 2 L-8 4 L-10 2 Z" fill="%23000"/><path d="M8 0 L10 2 L8 4 L6 2 Z" fill="%23000"/></g></g><!-- Repeat pattern --><g transform="translate(0, 200)"><g transform="translate(40, 100)"><path d="M0 0 L8 8 L0 16 L-8 8 Z" fill="%23000"/><path d="M0 -8 L4 -4 L0 0 L-4 -4 Z" fill="%23000"/><path d="M0 16 L4 20 L0 24 L-4 20 Z" fill="%23000"/><path d="M-8 8 Q-12 4 -16 8 Q-12 12 -8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="-12" cy="6" r="1.5" fill="%23000"/><path d="M8 8 Q12 4 16 8 Q12 12 8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="1.5" fill="%23000"/><g transform="translate(0, 50)"><path d="M-20 0 L-5 0" stroke="%23000" stroke-width="2"/><path d="M5 0 L20 0" stroke="%23000" stroke-width="2"/><path d="M-8 0 L-6 2 L-8 4 L-10 2 Z" fill="%23000"/><path d="M8 0 L10 2 L8 4 L6 2 Z" fill="%23000"/></g></g></g></g></pattern></defs><rect width="80" height="1000" fill="url(%23ornate)"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 1000"><defs><pattern id="ornate" x="0" y="0" width="80" height="200" patternUnits="userSpaceOnUse"><g fill="%23FFD700" stroke="%23000" stroke-width="1"><!-- Glowing circle with icons --><g transform="translate(40, 100)"><!-- Main glowing circle --><circle cx="0" cy="0" r="25" fill="%23FFD700" stroke="%23FF8C00" stroke-width="3" filter="url(%23glow)"/><!-- Person icon (left) --><g transform="translate(-15, -10)" fill="white"><circle cx="0" cy="0" r="2" fill="white"/><rect x="-2" y="0" width="4" height="8" fill="white"/><line x1="-3" y1="8" x2="-1" y2="8" stroke="white" stroke-width="1"/><line x1="1" y1="8" x2="3" y2="8" stroke="white" stroke-width="1"/></g><!-- Flame and person icon (right) --><g transform="translate(10, 5)" fill="white"><!-- Flame --><path d="M0 0 L3 -3 L6 0 L3 3 Z" fill="white"/><!-- Person near flame --><circle cx="2" cy="5" r="1.5" fill="white"/><rect x="1" y="6" width="2" height="4" fill="white"/><line x1="0" y1="10" x2="1" y2="10" stroke="white" stroke-width="0.5"/><line x1="3" y1="10" x2="4" y2="10" stroke="white" stroke-width="0.5"/></g></g><!-- Repeat pattern --><g transform="translate(0, 200)"><g transform="translate(40, 100)"><circle cx="0" cy="0" r="25" fill="%23FFD700" stroke="%23FF8C00" stroke-width="3" filter="url(%23glow)"/><g transform="translate(-15, -10)" fill="white"><circle cx="0" cy="0" r="2" fill="white"/><rect x="-2" y="0" width="4" height="8" fill="white"/><line x1="-3" y1="8" x2="-1" y2="8" stroke="white" stroke-width="1"/><line x1="1" y1="8" x2="3" y2="8" stroke="white" stroke-width="1"/></g><g transform="translate(10, 5)" fill="white"><path d="M0 0 L3 -3 L6 0 L3 3 Z" fill="white"/><circle cx="2" cy="5" r="1.5" fill="white"/><rect x="1" y="6" width="2" height="4" fill="white"/><line x1="0" y1="10" x2="1" y2="10" stroke="white" stroke-width="0.5"/><line x1="3" y1="10" x2="4" y2="10" stroke="white" stroke-width="0.5"/></g></g></g></g><defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></pattern></defs><rect width="80" height="1000" fill="url(%23ornate)"/></svg>');
   background-size: 80px 200px;
   background-repeat: repeat-y;
   position: absolute;
   top: 0;
   left: 0;
   border-radius: inherit;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .border-dot {

@@ -16,12 +16,12 @@ const Impact = () => {
 
   useEffect(() => {
     const animateCounters = () => {
-      const speed = 50;
+      const speed = 100; // Slower speed for better visibility
       const updateCounters = () => {
         setCounters(prev => ({
-          families: Math.min(prev.families + 5, targetCounters.families),
-          volunteers: Math.min(prev.volunteers + 2, targetCounters.volunteers),
-          meals: Math.min(prev.meals + 30, targetCounters.meals)
+          families: Math.min(prev.families + 2, targetCounters.families),
+          volunteers: Math.min(prev.volunteers + 1, targetCounters.volunteers),
+          meals: Math.min(prev.meals + 8, targetCounters.meals)
         }));
 
         if (counters.families < targetCounters.families || 
@@ -33,7 +33,7 @@ const Impact = () => {
       updateCounters();
     };
 
-    const timer = setTimeout(animateCounters, 1000);
+    const timer = setTimeout(animateCounters, 1500); // Start after 1.5 seconds
     return () => clearTimeout(timer);
   }, []);
 

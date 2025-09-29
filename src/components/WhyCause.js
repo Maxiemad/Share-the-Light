@@ -31,20 +31,6 @@ const WhyCause = () => {
               <p>"We aim to bring sweets, smiles, and hope to underprivileged children this festive season."</p>
             </div>
           </motion.div>
-          
-          <motion.div 
-            className="why-visual"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <div className="kids-illustration">
-              <i className="fas fa-child"></i>
-              <i className="fas fa-child"></i>
-              <i className="fas fa-fire"></i>
-            </div>
-          </motion.div>
         </div>
       </div>
       <div className="curved-separator"></div>
