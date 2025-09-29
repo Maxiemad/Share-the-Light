@@ -103,7 +103,11 @@ const ImageTrail = ({
       >
         <motion.div
           className="image-trail-row"
-          style={{ width: rowWidth ? rowWidth * 2 : 'auto' }}
+          style={{ 
+            width: rowWidth ? rowWidth * 2 : 'auto',
+            display: 'flex',
+            alignItems: 'center'
+          }}
           animate={rowWidth ? animateX : {}}
           transition={
             rowWidth
