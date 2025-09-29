@@ -12,13 +12,19 @@ const Preloader = () => {
     >
       <div className="preloader-content">
         <div className="diya-container">
-          <div className="diya">
-            <div className="diya-body"></div>
-            <div className="flame">
-              <div className="flame-inner"></div>
-              <div className="flame-outer"></div>
-            </div>
-          </div>
+          <div className="diya"></div>
+          <svg className="flame" viewBox="0 0 60 100">
+            <path d="M30 0 
+                     C15 25, 15 60, 30 90 
+                     C45 60, 45 25, 30 0 Z"
+                  fill="url(#flameGradient)" />
+            <defs>
+              <linearGradient id="flameGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="yellow"/>
+                <stop offset="100%" stopColor="red"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
         <motion.h2 
           className="preloader-text"
