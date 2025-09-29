@@ -181,6 +181,79 @@ body {
     background: #fff !important;
   }
   
+  /* Mobile text color fixes for white background */
+  .why-cause-section h1,
+  .why-cause-section h2,
+  .why-cause-section h3,
+  .why-cause-section h4,
+  .why-cause-section h5,
+  .why-cause-section h6,
+  .why-cause-section p,
+  .why-cause-section span,
+  .why-cause-section div {
+    color: #800000 !important;
+  }
+  
+  .kits-section h1,
+  .kits-section h2,
+  .kits-section h3,
+  .kits-section h4,
+  .kits-section h5,
+  .kits-section h6,
+  .kits-section p,
+  .kits-section span,
+  .kits-section div {
+    color: #800000 !important;
+  }
+  
+  .impact-section h1,
+  .impact-section h2,
+  .impact-section h3,
+  .impact-section h4,
+  .impact-section h5,
+  .impact-section h6,
+  .impact-section p,
+  .impact-section span,
+  .impact-section div {
+    color: #800000 !important;
+  }
+  
+  .how-it-works-section h1,
+  .how-it-works-section h2,
+  .how-it-works-section h3,
+  .how-it-works-section h4,
+  .how-it-works-section h5,
+  .how-it-works-section h6,
+  .how-it-works-section p,
+  .how-it-works-section span,
+  .how-it-works-section div {
+    color: #800000 !important;
+  }
+  
+  .volunteer-section h1,
+  .volunteer-section h2,
+  .volunteer-section h3,
+  .volunteer-section h4,
+  .volunteer-section h5,
+  .volunteer-section h6,
+  .volunteer-section p,
+  .volunteer-section span,
+  .volunteer-section div {
+    color: #800000 !important;
+  }
+  
+  .footer h1,
+  .footer h2,
+  .footer h3,
+  .footer h4,
+  .footer h5,
+  .footer h6,
+  .footer p,
+  .footer span,
+  .footer div {
+    color: #800000 !important;
+  }
+  
   /* Specific fix for Impact section testimonials */
   .impact-section {
     z-index: 10 !important;
@@ -249,6 +322,79 @@ body {
   .volunteer-section,
   .footer {
     background: #fff !important;
+  }
+  
+  /* Mobile text color fixes for white background - 480px */
+  .why-cause-section h1,
+  .why-cause-section h2,
+  .why-cause-section h3,
+  .why-cause-section h4,
+  .why-cause-section h5,
+  .why-cause-section h6,
+  .why-cause-section p,
+  .why-cause-section span,
+  .why-cause-section div {
+    color: #800000 !important;
+  }
+  
+  .kits-section h1,
+  .kits-section h2,
+  .kits-section h3,
+  .kits-section h4,
+  .kits-section h5,
+  .kits-section h6,
+  .kits-section p,
+  .kits-section span,
+  .kits-section div {
+    color: #800000 !important;
+  }
+  
+  .impact-section h1,
+  .impact-section h2,
+  .impact-section h3,
+  .impact-section h4,
+  .impact-section h5,
+  .impact-section h6,
+  .impact-section p,
+  .impact-section span,
+  .impact-section div {
+    color: #800000 !important;
+  }
+  
+  .how-it-works-section h1,
+  .how-it-works-section h2,
+  .how-it-works-section h3,
+  .how-it-works-section h4,
+  .how-it-works-section h5,
+  .how-it-works-section h6,
+  .how-it-works-section p,
+  .how-it-works-section span,
+  .how-it-works-section div {
+    color: #800000 !important;
+  }
+  
+  .volunteer-section h1,
+  .volunteer-section h2,
+  .volunteer-section h3,
+  .volunteer-section h4,
+  .volunteer-section h5,
+  .volunteer-section h6,
+  .volunteer-section p,
+  .volunteer-section span,
+  .volunteer-section div {
+    color: #800000 !important;
+  }
+  
+  .footer h1,
+  .footer h2,
+  .footer h3,
+  .footer h4,
+  .footer h5,
+  .footer h6,
+  .footer p,
+  .footer span,
+  .footer div {
+    color: #800000 !important;
   }
   
   /* Smaller touch targets for very small screens */
