@@ -20,6 +20,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  pointer-events: none;
 }
 
 .left-border {
@@ -88,33 +89,11 @@
   .decorative-border {
     width: 50px;
   }
-  .hero-section,
-  .why-cause-section,
-  .impact-section,
-  .kits-section,
-  .how-it-works-section,
-  .volunteer-section,
-  .donor-wall-section,
-  .gallery-section,
-  footer {
-    margin: 0 50px;
-  }
 }
 
 @media (max-width: 768px) {
   .decorative-border {
     width: 30px;
-  }
-  .hero-section,
-  .why-cause-section,
-  .impact-section,
-  .kits-section,
-  .how-it-works-section,
-  .volunteer-section,
-  .donor-wall-section,
-  .gallery-section,
-  footer {
-    margin: 0 30px;
   }
 }
 
@@ -122,15 +101,27 @@
   .decorative-border {
     width: 20px;
   }
-  .hero-section,
-  .why-cause-section,
-  .impact-section,
-  .kits-section,
-  .how-it-works-section,
-  .volunteer-section,
-  .donor-wall-section,
-  .gallery-section,
-  footer {
-    margin: 0 20px;
+}
+
+/* Ensure borders are always visible */
+.decorative-border {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Make borders more prominent on mobile */
+@media (max-width: 768px) {
+  .decorative-border {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.5) !important;
+  }
+  
+  .border-dot {
+    width: 16px;
+    height: 16px;
+    box-shadow: 
+      0 0 15px #FFD700,
+      0 0 25px #FFD700,
+      0 0 35px #FFD700;
   }
 }

@@ -123,6 +123,7 @@ body {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -135,15 +136,64 @@ body {
     min-width: 44px;
   }
   
-  /* Prevent horizontal scroll */
+  /* Prevent horizontal scroll and overlapping */
   * {
     max-width: 100%;
+    box-sizing: border-box;
   }
   
   /* Optimize images */
   img {
     max-width: 100%;
     height: auto;
+  }
+  
+  /* Global mobile container - consistent dimensions */
+  .App {
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Force mobile layout for all sections - consistent margins */
+  .hero-section,
+  .why-cause-section,
+  .kits-section,
+  .gallery-section,
+  .footer {
+    margin: 0 10px !important;
+    padding: 50px 0 !important;
+    position: relative;
+    z-index: 1;
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+  }
+  
+  /* Force mobile layout for footer */
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+  
+  .info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  /* Ensure decorative borders are visible */
+  .decorative-border {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 1000 !important;
+  }
+  
+  /* Prevent content overlap */
+  .section-title {
+    margin-bottom: 20px !important;
+    line-height: 1.2 !important;
   }
 }
 
@@ -152,10 +202,30 @@ body {
     font-size: 13px;
   }
   
+  /* Force mobile layout for all sections - same dimensions as 768px */
+  .hero-section,
+  .why-cause-section,
+  .kits-section,
+  .gallery-section,
+  .footer {
+    margin: 0 10px !important;
+    padding: 40px 0 !important;
+    position: relative;
+    z-index: 1;
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+  }
+  
   /* Smaller touch targets for very small screens */
   .btn-primary, .btn-secondary {
     min-height: 40px;
     min-width: 40px;
+  }
+  
+  /* Ensure consistent spacing */
+  .section-title {
+    margin-bottom: 15px !important;
+    line-height: 1.1 !important;
   }
 }
 

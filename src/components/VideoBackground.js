@@ -111,7 +111,14 @@ const VideoBackground = () => {
         loop 
         muted 
         playsInline
+        webkit-playsinline="true"
         onError={handleVideoError}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center center'
+        }}
       >
         <source src="/0929.mov" type="video/quicktime" />
         <source src="/0929.mov" type="video/mp4" />
