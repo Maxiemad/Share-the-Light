@@ -24,7 +24,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .kits-section {
-    margin: 0 20px;
+    margin: 0 20px !important;
     padding: 60px 0;
   }
   
@@ -41,7 +41,7 @@
 
 @media (max-width: 480px) {
   .kits-section {
-    margin: 0 15px;
+    margin: 0 15px !important;
     padding: 40px 0;
   }
   

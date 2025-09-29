@@ -136,10 +136,10 @@
   color: #FFD700;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
-    margin: 0 50px;
+    margin: 0 20px;
   }
   
   .hero-title {
@@ -158,10 +158,14 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    margin: 0 30px;
+    margin: 0 15px;
   }
   
   .hero-title {
     font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
   }
 }

@@ -27,9 +27,9 @@ const Footer = () => {
   };
 
   return (
-    <footer style={{ background: 'linear-gradient(135deg, #800000, #FF8C00)', color: 'white', padding: '60px 0 20px', margin: '0 80px', position: 'relative', zIndex: 1 }}>
+    <footer className="footer" style={{ background: 'linear-gradient(135deg, #800000, #FF8C00)', color: 'white', padding: '60px 0 20px', margin: '0 80px', position: 'relative', zIndex: 1 }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '40px', marginBottom: '40px' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '40px', marginBottom: '40px' }}>
           {/* Contact Us, Follow Us, and Form Fields */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
             <div>
@@ -223,8 +223,8 @@ const Footer = () => {
         </div>
 
         {/* Additional Information */}
-        <div style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '20px', borderRadius: '10px', marginBottom: '20px', fontSize: '0.9rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+        <div className="additional-info" style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '20px', borderRadius: '10px', marginBottom: '20px', fontSize: '0.9rem' }}>
+          <div className="info-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
             <div>
               <h4 style={{ color: '#FFD700', marginBottom: '10px' }}>Tax Benefits</h4>
               <p style={{ margin: '0', fontSize: '0.8rem' }}>*80G available as per Income Tax Act 1961 and rules made there under.</p>
