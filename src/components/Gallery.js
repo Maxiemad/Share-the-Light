@@ -49,82 +49,152 @@ const Gallery = () => {
           Moments of Joy
         </motion.h2>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
-          {galleryItems.map((item, index) => (
-            <motion.div 
-              key={index}
-              style={{ 
-                height: '250px', 
-                borderRadius: '15px', 
-                overflow: 'hidden', 
-                position: 'relative',
-                cursor: 'pointer'
-              }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: '0 15px 35px rgba(0,0,0,0.2)'
-              }}
-            >
-              <div style={{ 
-                width: '100%', 
-                height: '100%', 
-                background: `linear-gradient(135deg, 
-                  ${index % 2 === 0 ? '#FF8C00, #FFD700' : '#800000, #FF8C00'}, 
-                  ${index % 3 === 0 ? '#FFD700, #FF8C00' : '#FF8C00, #800000'}
-                )`, 
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                color: 'white', 
-                textAlign: 'center',
-                padding: '20px',
-                position: 'relative'
-              }}>
-                <div style={{ 
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  right: '0',
-                  bottom: '0',
-                  background: 'rgba(0,0,0,0.1)',
-                  borderRadius: '15px'
-                }}></div>
-                
-                <div style={{ 
-                  fontSize: '4rem', 
-                  marginBottom: '20px',
+        <div className="gallery-grid">
+          {/* First Row - 3 items */}
+          <div className="gallery-row">
+            {galleryItems.slice(0, 3).map((item, index) => (
+              <motion.div 
+                key={index}
+                className="gallery-item"
+                style={{ 
+                  borderRadius: '15px', 
+                  overflow: 'hidden', 
                   position: 'relative',
-                  zIndex: 1
+                  cursor: 'pointer'
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: '0 15px 35px rgba(0,0,0,0.2)'
+                }}
+              >
+                <div style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  background: `linear-gradient(135deg, 
+                    ${index % 2 === 0 ? '#FF8C00, #FFD700' : '#800000, #FF8C00'}, 
+                    ${index % 3 === 0 ? '#FFD700, #FF8C00' : '#FF8C00, #800000'}
+                  )`, 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  color: 'white', 
+                  textAlign: 'center',
+                  padding: '15px',
+                  position: 'relative'
                 }}>
-                  {item.icon}
+                  <div style={{ 
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    right: '0',
+                    bottom: '0',
+                    background: 'rgba(0,0,0,0.1)',
+                    borderRadius: '15px'
+                  }}></div>
+                  
+                  <div className="gallery-icon" style={{ 
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.icon}
+                  </div>
+                  
+                  <h3 className="gallery-title" style={{ 
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.title}
+                  </h3>
+                  
+                  <p className="gallery-description" style={{ 
+                    opacity: 0.9,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.description}
+                  </p>
                 </div>
-                
-                <h3 style={{ 
-                  fontSize: '1.3rem', 
-                  fontWeight: '600', 
-                  marginBottom: '10px',
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Second Row - 3 items */}
+          <div className="gallery-row">
+            {galleryItems.slice(3, 6).map((item, index) => (
+              <motion.div 
+                key={index + 3}
+                className="gallery-item"
+                style={{ 
+                  borderRadius: '15px', 
+                  overflow: 'hidden', 
                   position: 'relative',
-                  zIndex: 1
+                  cursor: 'pointer'
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: (index + 3) * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: '0 15px 35px rgba(0,0,0,0.2)'
+                }}
+              >
+                <div style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  background: `linear-gradient(135deg, 
+                    ${index % 2 === 0 ? '#FF8C00, #FFD700' : '#800000, #FF8C00'}, 
+                    ${index % 3 === 0 ? '#FFD700, #FF8C00' : '#FF8C00, #800000'}
+                  )`, 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  color: 'white', 
+                  textAlign: 'center',
+                  padding: '15px',
+                  position: 'relative'
                 }}>
-                  {item.title}
-                </h3>
-                
-                <p style={{ 
-                  fontSize: '0.9rem', 
-                  opacity: 0.9,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                  <div style={{ 
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    right: '0',
+                    bottom: '0',
+                    background: 'rgba(0,0,0,0.1)',
+                    borderRadius: '15px'
+                  }}></div>
+                  
+                  <div className="gallery-icon" style={{ 
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.icon}
+                  </div>
+                  
+                  <h3 className="gallery-title" style={{ 
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.title}
+                  </h3>
+                  
+                  <p className="gallery-description" style={{ 
+                    opacity: 0.9,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
         
         <motion.div 

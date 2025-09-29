@@ -60,38 +60,38 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .image-trail-container {
-    padding: 30px 0;
+    padding: 40px 0;
   }
   
   .image-trail-wrapper {
-    height: 150px;
+    height: 180px; /* Increased from 150px */
   }
   
   .image-trail-item-wrapper {
-    width: 120px;
+    width: 140px; /* Increased from 120px */
   }
   
   .image-trail-items {
-    gap: 20px;
-    padding: 0 20px;
+    gap: 25px; /* Increased from 20px */
+    padding: 0 25px;
   }
 }
 
 @media (max-width: 480px) {
   .image-trail-container {
-    padding: 25px 0;
+    padding: 35px 0; /* Increased from 25px */
   }
   
   .image-trail-wrapper {
-    height: 120px;
+    height: 160px; /* Increased from 120px */
   }
   
   .image-trail-item-wrapper {
-    width: 100px;
+    width: 120px; /* Increased from 100px */
   }
   
   .image-trail-items {
-    gap: 15px;
-    padding: 0 15px;
+    gap: 20px; /* Increased from 15px */
+    padding: 0 20px;
   }
 }

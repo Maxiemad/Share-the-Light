@@ -5,7 +5,6 @@ import './VideoBackground.css';
 
 const VideoBackground = () => {
   const [init, setInit] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -13,13 +12,6 @@ const VideoBackground = () => {
     }).then(() => {
       setInit(true);
     });
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowFallback(true);
-    }, 2000);
-    return () => clearTimeout(timer);
   }, []);
 
   const particlesOptions = {
@@ -86,15 +78,6 @@ const VideoBackground = () => {
     console.log('Video error');
   };
 
-  const handlePlayVideo = () => {
-    const video = document.querySelector('.background-video');
-    if (video) {
-      video.muted = false;
-      video.volume = 0.3;
-      video.play().catch(e => console.log('Play failed:', e));
-    }
-  };
-
   return (
     <div className="video-background-container">
       {init && (
@@ -124,17 +107,6 @@ const VideoBackground = () => {
         <source src="/0929.mov" type="video/mp4" />
       </video>
       
-      {showFallback && (
-        <div className="video-fallback">
-          <div className="fallback-content">
-            <i className="fas fa-video"></i>
-            <p>Video loading...</p>
-            <button className="play-btn" onClick={handlePlayVideo}>
-              Click to Play Video
-            </button>
-          </div>
-        </div>
-      )}
       
       <div className="video-overlay"></div>
     </div>

@@ -159,7 +159,9 @@ body {
   .hero-section,
   .why-cause-section,
   .kits-section,
-  .gallery-section,
+  .impact-section,
+  .how-it-works-section,
+  .volunteer-section,
   .footer {
     margin: 0 10px !important;
     padding: 50px 0 !important;
@@ -167,6 +169,27 @@ body {
     z-index: 1;
     width: calc(100vw - 20px);
     max-width: calc(100vw - 20px);
+  }
+  
+  /* White background for all sections after image trail */
+  .why-cause-section,
+  .kits-section,
+  .impact-section,
+  .how-it-works-section,
+  .volunteer-section,
+  .footer {
+    background: #fff !important;
+  }
+  
+  /* Specific fix for Impact section testimonials */
+  .impact-section {
+    z-index: 10 !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .impact-section .testimonials-grid {
+    z-index: 10 !important;
+    position: relative !important;
   }
   
   /* Force mobile layout for footer */
@@ -206,7 +229,9 @@ body {
   .hero-section,
   .why-cause-section,
   .kits-section,
-  .gallery-section,
+  .impact-section,
+  .how-it-works-section,
+  .volunteer-section,
   .footer {
     margin: 0 10px !important;
     padding: 40px 0 !important;
@@ -214,6 +239,16 @@ body {
     z-index: 1;
     width: calc(100vw - 20px);
     max-width: calc(100vw - 20px);
+  }
+  
+  /* White background for all sections after image trail */
+  .why-cause-section,
+  .kits-section,
+  .impact-section,
+  .how-it-works-section,
+  .volunteer-section,
+  .footer {
+    background: #fff !important;
   }
   
   /* Smaller touch targets for very small screens */
