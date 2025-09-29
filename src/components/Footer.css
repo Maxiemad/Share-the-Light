@@ -71,20 +71,48 @@
   box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
 }
 
-/* Responsive Design */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .footer {
-    margin: 0 50px;
+    margin: 0 20px;
+    padding: 40px 0 20px;
   }
   
   .footer .container {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  
+  .footer h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer h4 {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .footer {
-    margin: 0 30px;
+    margin: 0 15px;
+    padding: 30px 0 15px;
+  }
+  
+  .footer h3 {
+    font-size: 1.2rem;
+  }
+  
+  .footer h4 {
+    font-size: 1rem;
+  }
+  
+  .footer input, .footer select {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+  
+  .footer button {
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }

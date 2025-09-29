@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Kits.css';
 
 const Kits = () => {
   const [selectedKit, setSelectedKit] = useState(null);
@@ -47,7 +48,7 @@ const Kits = () => {
           Choose Your Diwali Kit
         </h2>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+        <div className="kits-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
           {kits.map((kit, index) => (
             <div 
               key={kit.name}

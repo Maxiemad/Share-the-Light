@@ -46,6 +46,53 @@
   animation: flicker 1.5s infinite ease-in-out alternate;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .diya-container {
+    width: 80px;
+    height: 120px;
+    margin: 0 auto 20px;
+  }
+  
+  .diya {
+    width: 80px;
+    height: 32px;
+  }
+  
+  .flame {
+    width: 48px;
+    height: 96px;
+    bottom: 32px;
+  }
+  
+  .preloader-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .diya-container {
+    width: 70px;
+    height: 100px;
+    margin: 0 auto 15px;
+  }
+  
+  .diya {
+    width: 70px;
+    height: 28px;
+  }
+  
+  .flame {
+    width: 42px;
+    height: 84px;
+    bottom: 28px;
+  }
+  
+  .preloader-text {
+    font-size: 1rem;
+  }
+}
+
 .preloader-text {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
