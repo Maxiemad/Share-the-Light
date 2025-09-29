@@ -1,314 +1,136 @@
-/* Decorative Border Styles */
+/* Decorative Borders - Ornate Design */
 .decorative-border {
   position: fixed;
   top: 0;
-  width: 80px;
+  width: 80px; /* Wider for ornate design */
   height: 100vh;
   z-index: 1000;
   background: linear-gradient(180deg, 
-    #FFD700 0%, 
-    #FF8C00 20%, 
-    #800000 40%, 
-    #FF8C00 60%, 
-    #FFD700 80%, 
-    #FF8C00 100%
+      #FFD700 0%, 
+      #FF8C00 20%, 
+      #800000 40%, 
+      #FF8C00 60%, 
+      #FFD700 80%, 
+      #FF8C00 100%
   );
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-  overflow: hidden;
+  animation: borderGlow 3s ease-in-out infinite alternate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .left-border {
   left: 0;
-  border-radius: 0 25px 25px 0;
+  border-radius: 0 20px 20px 0;
+  background: linear-gradient(90deg, 
+      #FFD700 0%, 
+      #FF8C00 30%, 
+      #800000 60%, 
+      #FF8C00 100%
+  );
 }
 
 .right-border {
   right: 0;
-  border-radius: 25px 0 0 25px;
+  border-radius: 20px 0 0 20px;
+  background: linear-gradient(270deg, 
+      #FFD700 0%, 
+      #FF8C00 30%, 
+      #800000 60%, 
+      #FF8C00 100%
+  );
 }
 
 .border-pattern {
-  position: relative;
   width: 100%;
   height: 100%;
-  padding: 20px 10px;
-}
-
-/* Central Line */
-.central-line {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 1000"><defs><pattern id="ornate" x="0" y="0" width="80" height="200" patternUnits="userSpaceOnUse"><g fill="%23FFD700" stroke="%23000" stroke-width="1"><!-- Central ornate design --><g transform="translate(40, 100)"><!-- Main central diamond --><path d="M0 0 L8 8 L0 16 L-8 8 Z" fill="%23000"/><!-- Top diamond --><path d="M0 -8 L4 -4 L0 0 L-4 -4 Z" fill="%23000"/><!-- Bottom diamond --><path d="M0 16 L4 20 L0 24 L-4 20 Z" fill="%23000"/><!-- Left swirl --><path d="M-8 8 Q-12 4 -16 8 Q-12 12 -8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="-12" cy="6" r="1.5" fill="%23000"/><!-- Right swirl --><path d="M8 8 Q12 4 16 8 Q12 12 8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="1.5" fill="%23000"/><!-- Horizontal lines with diamonds --><g transform="translate(0, 50)"><path d="M-20 0 L-5 0" stroke="%23000" stroke-width="2"/><path d="M5 0 L20 0" stroke="%23000" stroke-width="2"/><path d="M-8 0 L-6 2 L-8 4 L-10 2 Z" fill="%23000"/><path d="M8 0 L10 2 L8 4 L6 2 Z" fill="%23000"/></g></g><!-- Repeat pattern --><g transform="translate(0, 200)"><g transform="translate(40, 100)"><path d="M0 0 L8 8 L0 16 L-8 8 Z" fill="%23000"/><path d="M0 -8 L4 -4 L0 0 L-4 -4 Z" fill="%23000"/><path d="M0 16 L4 20 L0 24 L-4 20 Z" fill="%23000"/><path d="M-8 8 Q-12 4 -16 8 Q-12 12 -8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="-12" cy="6" r="1.5" fill="%23000"/><path d="M8 8 Q12 4 16 8 Q12 12 8 8" stroke="%23000" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="1.5" fill="%23000"/><g transform="translate(0, 50)"><path d="M-20 0 L-5 0" stroke="%23000" stroke-width="2"/><path d="M5 0 L20 0" stroke="%23000" stroke-width="2"/><path d="M-8 0 L-6 2 L-8 4 L-10 2 Z" fill="%23000"/><path d="M8 0 L10 2 L8 4 L6 2 Z" fill="%23000"/></g></g></g></g></pattern></defs><rect width="80" height="1000" fill="url(%23ornate)"/></svg>');
+  background-size: 80px 200px;
+  background-repeat: repeat-y;
   position: absolute;
-  left: 50%;
   top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #000;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* Main Ornate Design */
-.ornate-design {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 80px;
-  z-index: 2;
-}
-
-/* S-shaped curves */
-.s-curve {
-  position: absolute;
-  width: 25px;
-  height: 40px;
-  border: 3px solid #000;
-  border-radius: 50%;
-  border-top: none;
-  border-right: none;
-}
-
-.left-curve {
   left: 0;
-  top: 20px;
-  transform: rotate(-45deg);
+  border-radius: inherit;
+  opacity: 0.8;
 }
 
-.right-curve {
-  right: 0;
-  top: 20px;
-  transform: rotate(45deg);
-}
-
-/* Inner swirls */
-.inner-swirl {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #000;
-  border-radius: 50%;
-  border-top: none;
-  border-right: none;
-}
-
-.swirl-1 {
-  top: 15px;
-  left: 15px;
-  transform: rotate(-30deg);
-}
-
-.swirl-2 {
-  top: 25px;
-  right: 15px;
-  transform: rotate(30deg);
-}
-
-.swirl-3 {
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%) rotate(0deg);
-}
-
-/* Leaf shapes */
-.leaf-shape {
-  position: absolute;
-  width: 6px;
+.border-dot {
+  width: 12px;
   height: 12px;
-  background: #000;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-}
-
-.leaf-1 {
-  top: 10px;
-  left: 20px;
-  transform: rotate(-20deg);
-}
-
-.leaf-2 {
-  top: 20px;
-  right: 20px;
-  transform: rotate(20deg);
-}
-
-.leaf-3 {
-  top: 45px;
-  left: 50%;
-  transform: translateX(-50%) rotate(0deg);
-}
-
-/* Decorative dots */
-.decorative-dot {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #000;
+  background: #FFD700;
   border-radius: 50%;
-}
-
-.dot-1 {
-  top: 12px;
-  left: 10px;
-}
-
-.dot-2 {
-  top: 18px;
-  right: 10px;
-}
-
-.dot-3 {
-  top: 30px;
-  left: 5px;
-}
-
-.dot-4 {
-  top: 40px;
-  right: 5px;
-}
-
-/* Diamond Accents */
-.diamond-section {
+  box-shadow: 
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 30px #FFD700;
+  animation: borderDot 2s ease-in-out infinite;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 40px;
-  z-index: 3;
 }
 
-.diamond {
-  position: absolute;
-  background: #000;
-  transform: rotate(45deg);
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
+  100% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 140, 0, 0.3); }
 }
 
-.large-diamond {
-  width: 8px;
-  height: 8px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+@keyframes borderDot {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
 }
 
-.small-diamond-1 {
-  width: 4px;
-  height: 4px;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.small-diamond-2 {
-  width: 4px;
-  height: 4px;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-/* Dot Patterns */
-.dot-patterns {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 60px;
-  z-index: 3;
-}
-
-.dot-pair {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #000;
-  border-radius: 50%;
-}
-
-.dot-pair::before {
-  content: '';
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #000;
-  border-radius: 50%;
-  right: 8px;
-}
-
-.pair-1 {
-  top: 10px;
-  left: 0;
-}
-
-.pair-2 {
-  top: 40px;
-  left: 0;
-}
-
-.single-dot {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #000;
-  border-radius: 50%;
-}
-
-.dot-5 {
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.dot-6 {
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Glow Effect */
-.glow-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design for Borders */
+@media (max-width: 1024px) {
   .decorative-border {
     width: 50px;
   }
-  
-  .ornate-design {
-    width: 40px;
-    height: 60px;
+  .hero-section,
+  .why-cause-section,
+  .impact-section,
+  .kits-section,
+  .how-it-works-section,
+  .volunteer-section,
+  .donor-wall-section,
+  .gallery-section,
+  footer {
+    margin: 0 50px;
   }
-  
-  .s-curve {
-    width: 18px;
-    height: 30px;
+}
+
+@media (max-width: 768px) {
+  .decorative-border {
+    width: 30px;
+  }
+  .hero-section,
+  .why-cause-section,
+  .impact-section,
+  .kits-section,
+  .how-it-works-section,
+  .volunteer-section,
+  .donor-wall-section,
+  .gallery-section,
+  footer {
+    margin: 0 30px;
   }
 }
 
 @media (max-width: 480px) {
   .decorative-border {
-    width: 30px;
+    width: 20px;
   }
-  
-  .ornate-design {
-    width: 25px;
-    height: 40px;
-  }
-  
-  .s-curve {
-    width: 12px;
-    height: 20px;
-  }
-  
-  .border-pattern {
-    padding: 15px 5px;
+  .hero-section,
+  .why-cause-section,
+  .impact-section,
+  .kits-section,
+  .how-it-works-section,
+  .volunteer-section,
+  .donor-wall-section,
+  .gallery-section,
+  footer {
+    margin: 0 20px;
   }
 }
