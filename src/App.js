@@ -12,6 +12,8 @@ import DonorWall from './components/DonorWall';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import DecorativeBorder from './components/DecorativeBorder';
+import ImageTrail from './components/ImageTrail';
+import { leftToRightImages, rightToLeftImages } from './data/trailImages';
 import './App.css';
 
 function App() {
@@ -39,7 +41,9 @@ function App() {
           <WhyCause />
           <Impact />
           <Kits />
+          <ImageTrail direction="rtl" loopDuration={25} images={rightToLeftImages} />
           <HowItWorks />
+          <ImageTrail direction="ltr" loopDuration={30} images={leftToRightImages} />
           <Volunteer />
           <DonorWall />
           <Gallery />
