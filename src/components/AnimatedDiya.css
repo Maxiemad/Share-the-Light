@@ -1,0 +1,124 @@
+/* Animated Diya Styles */
+.animated-diya-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+}
+
+.diya-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.diya-body {
+  width: 80px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFD700, #FF8C00, #FF4500);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+  animation: diyaGlow 3s ease-in-out infinite alternate;
+}
+
+.diya-body::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(135deg, #FFD700, #FF8C00);
+  border-radius: 50% 50% 0 0;
+}
+
+.flame {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 50px;
+  background: linear-gradient(45deg, #FF4500, #FFD700, #FFA500);
+  border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+  animation: flicker 1.5s ease-in-out infinite alternate, sway 2s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+}
+
+.flame-inner {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 35px;
+  background: linear-gradient(45deg, #FF6347, #FFD700, #FFA500);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 1.8s ease-in-out infinite alternate;
+}
+
+.flame-outer {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 30px;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF6347);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0% { 
+    transform: translateX(-50%) scale(1) rotate(-2deg); 
+    opacity: 0.9;
+  }
+  100% { 
+    transform: translateX(-50%) scale(1.1) rotate(2deg); 
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0% { transform: translateX(-50%) rotate(-3deg); }
+  50% { transform: translateX(-50%) rotate(3deg); }
+  100% { transform: translateX(-50%) rotate(-3deg); }
+}
+
+@keyframes diyaGlow {
+  0% { 
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+    filter: brightness(1);
+  }
+  100% { 
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+    filter: brightness(1.1);
+  }
+}
+
+.animated-diya-container:hover .diya-container {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animated-diya-container {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-diya-container {
+    transform: scale(0.6);
+  }
+}
