@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share the Smile - Light Up Lives This Diwali</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Framer Motion (CDN alternative) -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="diya-container">
+                <div class="diya">
+                    <div class="diya-body"></div>
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <h2 class="preloader-text">Lighting up lives...</h2>
+        </div>
+    </div>
+
+    <!-- Decorative Borders -->
+    <div class="decorative-border left-border"></div>
+    <div class="decorative-border right-border"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div id="particles-js"></div>
+        <video class="hero-video" autoplay loop muted playsinline webkit-playsinline>
+            <source src="0929.mov" type="video/quicktime">
+            <source src="0929.mov" type="video/mp4">
+            <source src="0929.mov" type="video/x-msvideo">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-fallback">
+            <div class="fallback-content">
+                <i class="fas fa-video"></i>
+                <p>Video loading...</p>
+                <button id="play-video-btn" class="play-btn">Click to Play Video</button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Light Up Lives This Diwali</h1>
+            <p class="hero-subtitle">Join us in spreading joy by donating Diwali kits to children and families in need.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Donate Now</button>
+                <button class="btn-secondary">See Kits</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Cause Section -->
+    <section id="why-cause" class="why-cause-section">
+        <div id="particles-js-why"></div>
+        <div class="container">
+            <h2 class="section-title">Why This Matters</h2>
+            <div class="why-content">
+                <div class="why-text">
+                    <p>Diwali is the festival of sharing, where every small contribution can light up someone's life. This year, let's come together to spread the warmth of celebration to those who need it most.</p>
+                    <div class="mission-statement">
+                        <h3>Our Mission</h3>
+                        <p>"We aim to bring sweets, smiles, and hope to underprivileged children this festive season."</p>
+                    </div>
+                </div>
+                <div class="why-visual">
+                    <div class="kids-illustration">
+                        <i class="fas fa-child"></i>
+                        <i class="fas fa-child"></i>
+                        <i class="fas fa-fire"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="curved-separator"></div>
+    </section>
+
+    <!-- Kit Selection Section -->
+    <section id="kits" class="kits-section">
+        <div id="particles-js-kits"></div>
+        <div class="container">
+            <h2 class="section-title">Choose Your Diwali Kit</h2>
+            <div class="kits-grid">
+                <div class="kit-card">
+                    <div class="kit-image">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Basic Kit</h3>
+                    <div class="kit-price">₹499</div>
+                    <ul class="kit-items">
+                        <li><i class="fas fa-candy-cane"></i> Sweets</li>
+                        <li><i class="fas fa-fire"></i> Diyas</li>
+                        <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
+                    </ul>
+                    <button class="kit-donate-btn">Donate This Kit</button>
+                </div>
+                
+                <div class="kit-card featured">
+                    <div class="kit-badge">Most Popular</div>
+                    <div class="kit-image">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Joy Kit</h3>
+                    <div class="kit-price">₹999</div>
+                    <ul class="kit-items">
+                        <li><i class="fas fa-candy-cane"></i> Sweets</li>
+                        <li><i class="fas fa-fire"></i> Diyas</li>
+                        <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
+                        <li><i class="fas fa-gamepad"></i> Toys</li>
+                    </ul>
+                    <button class="kit-donate-btn">Donate This Kit</button>
+                </div>
+                
+                <div class="kit-card">
+                    <div class="kit-image">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Celebration Kit</h3>
+                    <div class="kit-price">₹1499</div>
+                    <ul class="kit-items">
+                        <li><i class="fas fa-candy-cane"></i> Sweets</li>
+                        <li><i class="fas fa-fire"></i> Diyas</li>
+                        <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
+                        <li><i class="fas fa-gamepad"></i> Toys</li>
+                        <li><i class="fas fa-book"></i> Books</li>
+                        <li><i class="fas fa-lightbulb"></i> Lanterns</li>
+                        <li><i class="fas fa-plus"></i> Extra Goodies</li>
+                    </ul>
+                    <button class="kit-donate-btn">Donate This Kit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact-section">
+        <div id="particles-js-impact"></div>
+        <div class="container">
+            <h2 class="section-title">Your Impact Last Year</h2>
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="250">0</div>
+                    <div class="stat-label">Families Helped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="45">0</div>
+                    <div class="stat-label">Volunteers Joined</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-label">Meals Served</div>
+                </div>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Seeing the children's faces light up when they received their Diwali kits was the most heartwarming experience."</p>
+                    <span>- Priya, Volunteer</span>
+                </div>
+                <div class="testimonial">
+                    <p>"This was the first time my children had their own Diwali celebration. Thank you for bringing joy to our home."</p>
+                    <span>- Rajesh, Recipient</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Choose a Kit</h3>
+                    <p>Select from our carefully curated Diwali kits</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Donate Online</h3>
+                    <p>Make a secure online donation</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>We Deliver & Share Smiles</h3>
+                    <p>We distribute kits and spread joy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="volunteer-section">
+        <div class="container">
+            <h2 class="section-title">Join the Movement</h2>
+            <div class="volunteer-content">
+                <div class="volunteer-text">
+                    <h3>Be Part of Something Beautiful</h3>
+                    <p>Join our community of volunteers who are making a difference in children's lives this Diwali. Whether you want to help with distribution, spread the word, or organize drives in your area - every contribution matters.</p>
+                    <div class="volunteer-options">
+                        <div class="volunteer-option">
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Become a volunteer</span>
+                        </div>
+                        <div class="volunteer-option">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share campaign</span>
+                        </div>
+                        <div class="volunteer-option">
+                            <i class="fas fa-truck"></i>
+                            <span>Join distribution drives</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="volunteer-btn">Become a Volunteer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donor Wall -->
+    <section id="donor-wall" class="donor-wall-section">
+        <div class="container">
+            <h2 class="section-title">Recent Donors</h2>
+            <div class="donor-list" id="donor-list">
+                <!-- Donors will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Moments of Joy</h2>
+            <div class="gallery-carousel">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-smile"></i>
+                        <p>Children receiving their Diwali kits</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-fire"></i>
+                        <p>Diyas lighting up the night</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-users"></i>
+                        <p>Community celebrations</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-gift"></i>
+                        <p>Distribution in progress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@sharethesmile.org</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Donate</h3>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Scan for UPI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Built by students to make a difference. © 2024 Share the Smile</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

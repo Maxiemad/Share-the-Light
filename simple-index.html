@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share the Smile - Light Up Lives This Diwali</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Decorative Borders */
+        .decorative-border {
+            position: fixed;
+            top: 0;
+            width: 80px;
+            height: 100vh;
+            z-index: 1000;
+            background: linear-gradient(180deg, 
+                #FFD700 0%, 
+                #FF8C00 20%, 
+                #800000 40%, 
+                #FF8C00 60%, 
+                #FFD700 80%, 
+                #FF8C00 100%
+            );
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .left-border {
+            left: 0;
+            border-radius: 0 25px 25px 0;
+        }
+
+        .right-border {
+            right: 0;
+            border-radius: 25px 0 0 25px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #800000, #FF8C00, #FFD700);
+            margin: 0 80px;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #FF8C00, #FFD700);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #FFD700;
+        }
+
+        .btn-secondary:hover {
+            background: #FFD700;
+            color: #800000;
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #800000;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FF8C00, #FFD700);
+            border-radius: 2px;
+        }
+
+        /* Why Cause Section */
+        .why-cause-section {
+            height: 100vh;
+            padding: 100px 0;
+            background: transparent;
+            position: relative;
+            margin: 0 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .why-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .mission-statement {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .mission-statement h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            height: 100vh;
+            padding: 100px 0;
+            background: transparent;
+            color: white;
+            margin: 0 80px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Kits Section */
+        .kits-section {
+            padding: 100px 0;
+            background: #fff;
+            margin: 0 80px;
+            position: relative;
+        }
+
+        .kits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .kit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .kit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #FFD700;
+        }
+
+        .kit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+
+        .kit-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF8C00;
+            margin-bottom: 30px;
+        }
+
+        .kit-items {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .kit-items li {
+            padding: 10px 0;
+            color: #555;
+        }
+
+        .kit-donate-btn {
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .kit-donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .decorative-border {
+                width: 50px;
+            }
+            
+            .hero-section,
+            .why-cause-section,
+            .impact-section,
+            .kits-section {
+                margin: 0 50px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .why-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .decorative-border {
+                width: 30px;
+            }
+            
+            .hero-section,
+            .why-cause-section,
+            .impact-section,
+            .kits-section {
+                margin: 0 30px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Borders -->
+    <div class="decorative-border left-border"></div>
+    <div class="decorative-border right-border"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Light Up Lives This Diwali</h1>
+            <p class="hero-subtitle">Join us in spreading joy by donating Diwali kits to children and families in need.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Donate Now</button>
+                <button class="btn-secondary">See Kits</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Cause Section -->
+    <section id="why-cause" class="why-cause-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Why This Matters</h2>
+            <div class="why-content">
+                <div class="why-text">
+                    <p>Diwali is the festival of sharing, where every small contribution can light up someone's life. This year, let's come together to spread the warmth of celebration to those who need it most.</p>
+                    <div class="mission-statement">
+                        <h3>Our Mission</h3>
+                        <p>"We aim to bring sweets, smiles, and hope to underprivileged children this festive season."</p>
+                    </div>
+                </div>
+                <div class="why-visual">
+                    <div class="kids-illustration">
+                        <i class="fas fa-child" style="font-size: 3rem; color: #FF8C00; margin: 10px;"></i>
+                        <i class="fas fa-child" style="font-size: 3rem; color: #FF8C00; margin: 10px;"></i>
+                        <i class="fas fa-fire" style="font-size: 3rem; color: #FF8C00; margin: 10px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Your Impact Last Year</h2>
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number">250</div>
+                    <div class="stat-label">Families Helped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Volunteers Joined</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1200</div>
+                    <div class="stat-label">Meals Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kit Selection Section -->
+    <section id="kits" class="kits-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Diwali Kit</h2>
+            <div class="kits-grid">
+                <div class="kit-card">
+                    <h3>Basic Kit</h3>
+                    <div class="kit-price">₹499</div>
+                    <ul class="kit-items">
+                        <li>🍭 Sweets</li>
+                        <li>🪔 Diyas</li>
+                        <li>🍫 Chocolates</li>
+                    </ul>
+                    <button class="kit-donate-btn">Donate This Kit</button>
+                </div>
+                
+                <div class="kit-card">
+                    <h3>Joy Kit</h3>
+                    <div class="kit-price">₹999</div>
+                    <ul class="kit-items">
+                        <li>🍭 Sweets</li>
+                        <li>🪔 Diyas</li>
+                        <li>🍫 Chocolates</li>
+                        <li>🧸 Toys</li>
+                    </ul>
+                    <button class="kit-donate-btn">Donate This Kit</button>
+                </div>
+                
+                <div class="kit-card">
+                    <h3>Celebration Kit</h3>
+                    <div class="kit-price">₹1499</div>
+                    <ul class="kit-items">
+                        <li>🍭 Sweets</li>
+                        <li>🪔 Diyas</li>
+                        <li>🍫 Chocolates</li>
+                        <li>🧸 Toys</li>
+                        <li>📚 Books</li>
+                        <li>🏮 Lanterns</li>
+                        <li>🎁 Extra Goodies</li>
+                    </ul>
+                    <button class="kit-donate-btn">Donate This Kit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

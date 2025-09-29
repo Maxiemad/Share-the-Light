@@ -1,0 +1,123 @@
+/* Why Cause Section */
+.why-cause-section {
+  height: 100vh;
+  padding: 100px 0;
+  background: transparent;
+  position: relative;
+  margin: 0 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.why-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.why-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.mission-statement {
+  background: linear-gradient(135deg, #FFD700, #FF8C00);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.mission-statement h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.mission-statement p {
+  color: white;
+  font-style: italic;
+}
+
+.why-visual {
+  text-align: center;
+}
+
+.kids-illustration {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+.kids-illustration i {
+  font-size: 3rem;
+  color: white;
+  position: absolute;
+  animation: bounceIcon 2s ease-in-out infinite;
+}
+
+.kids-illustration i:nth-child(1) {
+  top: 20px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.kids-illustration i:nth-child(2) {
+  bottom: 20px;
+  right: 20px;
+  animation-delay: 0.5s;
+}
+
+.kids-illustration i:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.curved-separator {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .why-cause-section {
+    margin: 0 50px;
+  }
+  .why-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-cause-section {
+    margin: 0 30px;
+  }
+  .mission-statement h3 {
+    font-size: 1.5rem;
+  }
+}
