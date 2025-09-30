@@ -6,7 +6,7 @@ const Kits = () => {
   const kits = [
     {
       name: "Basic Kit",
-      price: "₹499",
+      price: "₹100",
       items: [
         { icon: "🍭", text: "Sweets" },
         { icon: "🪔", text: "Diyas" },
@@ -16,7 +16,7 @@ const Kits = () => {
     },
     {
       name: "Joy Kit",
-      price: "₹999",
+      price: "₹500",
       items: [
         { icon: "🍭", text: "Sweets" },
         { icon: "🪔", text: "Diyas" },
