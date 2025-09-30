@@ -79,78 +79,33 @@ const Kits = () => {
   }, [isModalOpen]);
 
   return (
-    <section id="kits" className="kits-section" style={{ padding: '100px 0', background: '#fff', margin: '0 80px', position: 'relative', zIndex: 10 }}>
+    <section id="kits" className="kits-section">
       <div className="container">
-        <h2 className="section-title">
-          Choose Your Diwali Kit
-        </h2>
+        <h2 className="section-title">Choose Your Diwali Kit</h2>
         
-        <div className="kits-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+        <div className="kits-grid">
           {kits.map((kit, index) => (
-            <div 
+            <div
               key={kit.name}
-              style={{ 
-                background: 'white', 
-                padding: '40px', 
-                borderRadius: '20px', 
-                textAlign: 'center', 
-                boxShadow: selectedKit === kit.name ? '0 15px 40px rgba(255, 140, 0, 0.3)' : '0 10px 30px rgba(0,0,0,0.1)',
-                border: selectedKit === kit.name ? '2px solid #FF8C00' : '2px solid transparent',
-                position: 'relative',
-                transform: selectedKit === kit.name ? 'scale(1.05)' : 'scale(1)',
-                transition: 'all 0.3s ease',
-                cursor: 'pointer'
-              }}
+              className={`kit-card ${selectedKit === kit.name ? 'is-selected' : ''}`}
               onMouseEnter={() => setSelectedKit(kit.name)}
               onMouseLeave={() => setSelectedKit(null)}
             >
-              
-              <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🎁</div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', marginBottom: '10px', color: '#800000' }}>
-                {kit.name}
-              </h3>
-              <div style={{ fontSize: '2.5rem', fontWeight: '700', color: '#FF8C00', margin: '20px 0' }}>
-                {kit.price}
-              </div>
-              
-              <ul style={{ listStyle: 'none', marginBottom: '30px', padding: 0 }}>
+              <div className="kit-icon">🎁</div>
+              <h3 className="kit-title">{kit.name}</h3>
+              <div className="kit-price">{kit.price}</div>
+              <div className="kit-features-title">What's inside</div>
+              <ul className="kit-items" role="list">
                 {kit.items.map((item, itemIndex) => (
-                  <li key={itemIndex} style={{ 
-                    padding: '10px 0', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    gap: '10px',
-                    color: '#555'
-                  }}>
-                    <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
-                    <span>{item.text}</span>
+                  <li key={itemIndex} className="kit-item">
+                    <span className="kit-item-icon" aria-hidden="true">{item.icon}</span>
+                    <span className="kit-item-text">{item.text}</span>
                   </li>
                 ))}
               </ul>
-              
-              <button 
-                className="btn-primary"
-                style={{
-                  background: 'linear-gradient(45deg, #FFD700, #FF8C00)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '15px 30px',
-                  borderRadius: '50px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  width: '100%'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'translateY(-2px)';
-                  e.target.style.boxShadow = '0 5px 15px rgba(255, 140, 0, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = 'none';
-                }}
+              <div className="kit-spacer" />
+              <button
+                className="kit-cta"
                 onClick={() => { setIsModalOpen(true); setModalKit(kit); }}
               >
                 Donate This Kit
