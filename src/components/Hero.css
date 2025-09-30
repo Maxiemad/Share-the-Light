@@ -10,6 +10,49 @@
   z-index: 1;
 }
 
+/* Audio Toggle Button */
+.btn-audio {
+  padding: 15px;
+  border: 2px solid #FFD700;
+  border-radius: 50%;
+  background: #FFD700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.btn-audio:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.btn-audio.audio-muted {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-audio.audio-unmuted {
+  background: #28a745;
+  border-color: #28a745;
+}
+
+.audio-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.btn-audio:hover .audio-icon {
+  transform: scale(1.1);
+}
+
 .particles {
   position: absolute;
   top: 0;

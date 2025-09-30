@@ -7,6 +7,7 @@ import './Hero.css';
 const Hero = () => {
   const [videoError, setVideoError] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
+  const [isAudioEnabled, setIsAudioEnabled] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,6 +24,16 @@ const Hero = () => {
     }).then(() => {
       setInit(true);
     });
+  }, []);
+
+  // Ensure video is ready
+  useEffect(() => {
+    const video = document.querySelector('.background-video');
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        console.log('Video loaded and ready');
+      });
+    }
   }, []);
 
   const particlesOptions = {
@@ -90,11 +101,37 @@ const Hero = () => {
   };
 
   const handlePlayVideo = () => {
-    const video = document.querySelector('.hero-video');
+    const video = document.querySelector('.background-video');
     if (video) {
       video.muted = false;
       video.volume = 0.3;
       video.play().catch(e => console.log('Play failed:', e));
+    }
+  };
+
+  const handleAudioToggle = () => {
+    console.log('Audio toggle clicked, current state:', isAudioEnabled);
+    const video = document.querySelector('.background-video');
+    console.log('Video element found:', video);
+    
+    if (video) {
+      if (isAudioEnabled) {
+        // Mute audio
+        video.muted = true;
+        setIsAudioEnabled(false);
+        console.log('Audio muted - button should be red');
+      } else {
+        // Unmute audio
+        video.muted = false;
+        video.volume = 0.5;
+        video.play().catch(e => console.log('Play failed:', e));
+        setIsAudioEnabled(true);
+        console.log('Audio enabled - button should be green');
+      }
+    } else {
+      console.log('Video element not found - checking all videos');
+      const allVideos = document.querySelectorAll('video');
+      console.log('All video elements:', allVideos);
     }
   };
 
@@ -133,6 +170,14 @@ const Hero = () => {
         >
           <button className="btn-primary">Donate Now</button>
           <button className="btn-secondary">See Kits</button>
+          <button 
+            id="audio-toggle-btn" 
+            className={`btn-audio ${isAudioEnabled ? 'audio-unmuted' : 'audio-muted'}`}
+            title={isAudioEnabled ? "Mute Audio" : "Enable Audio"}
+            onClick={handleAudioToggle}
+          >
+            <img src="/audio.png" alt="Audio" className="audio-icon" />
+          </button>
         </motion.div>
       </motion.div>
       

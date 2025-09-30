@@ -60,6 +60,9 @@
             <div class="hero-buttons">
                 <button class="btn-primary">Donate Now</button>
                 <button class="btn-secondary">See Kits</button>
+                <button id="audio-toggle-btn" class="btn-audio" title="Toggle Audio">
+                    <img src="public/audio.png" alt="Audio" class="audio-icon">
+                </button>
             </div>
         </div>
     </section>
@@ -316,5 +319,35 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Audio toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioToggleBtn = document.getElementById('audio-toggle-btn');
+            const video = document.querySelector('.hero-video');
+            let isAudioEnabled = false;
+
+            if (audioToggleBtn && video) {
+                // Set initial state (yellow background, muted)
+                // No class needed initially as CSS has yellow background by default
+                
+                audioToggleBtn.addEventListener('click', function() {
+                    if (isAudioEnabled) {
+                        // Mute audio
+                        video.muted = true;
+                        audioToggleBtn.classList.remove('audio-unmuted');
+                        audioToggleBtn.classList.add('audio-muted');
+                        isAudioEnabled = false;
+                    } else {
+                        // Unmute audio
+                        video.muted = false;
+                        video.play().catch(console.log);
+                        audioToggleBtn.classList.remove('audio-muted');
+                        audioToggleBtn.classList.add('audio-unmuted');
+                        isAudioEnabled = true;
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
