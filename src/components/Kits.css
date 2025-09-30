@@ -126,6 +126,113 @@
   }
 }
 
+/* Payment step styles */
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  margin: 10px 0 6px 0;
+}
+
+.qr-box {
+  background: #fff7e6;
+  border: 1px solid #ffe1b3;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.qr-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.qr-caption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #a65b00;
+}
+
+.bank-box {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eaeaea;
+  font-size: 0.95rem;
+}
+
+.bank-row:last-child {
+  border-bottom: none;
+}
+
+.bank-row span {
+  color: #666;
+}
+
+.bank-note {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* UPI ID row outside QR box */
+.upi-row {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.upi-label {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.upi-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upi-id {
+  background: #fff7e6;
+  color: #a65b00;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.copy-btn {
+  background: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copy-btn:disabled {
+  opacity: 0.8;
+  cursor: default;
+}
+
 .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;

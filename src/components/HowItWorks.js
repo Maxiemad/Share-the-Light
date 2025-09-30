@@ -20,6 +20,12 @@ const HowItWorks = () => {
           </div>
           <div className="step-arrow">→</div>
           <div className="step-item">
+            <div className="step-icon">₹</div>
+            <h3 className="step-title">Custom Amount</h3>
+            <p className="step-description">Prefer your own amount? Donate any amount you wish</p>
+          </div>
+          <div className="step-arrow">→</div>
+          <div className="step-item">
             <div className="step-icon">❤️</div>
             <h3 className="step-title">We Deliver & Share Smiles</h3>
             <p className="step-description">We distribute kits and spread joy</p>
