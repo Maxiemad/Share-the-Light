@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs, orderBy, limit, query } from 'firebase/firestore';
 import { db } from '../firebase';
-import DonorSlider from './DonorSlider';
 import { sendDonationNotification } from '../services/emailService';
 import { sendSimpleDonationNotification } from '../services/simpleEmailService';
 import './Footer.css';
@@ -342,10 +341,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Recent Donors Slider */}
-        {recentDonors.length > 0 && (
-          <DonorSlider donors={recentDonors} />
-        )}
 
         <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255, 215, 0, 0.3)', opacity: '0.8' }}>
           <p>Built by students to make a difference. © 2024 Share the Smile</p>

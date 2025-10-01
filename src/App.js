@@ -8,7 +8,6 @@ import Kits from './components/Kits';
 import Impact from './components/Impact';
 import HowItWorks from './components/HowItWorks';
 import Volunteer from './components/Volunteer';
-import DonorWall from './components/DonorWall';
 import Footer from './components/Footer';
 import DecorativeBorder from './components/DecorativeBorder';
 import ImageTrail from './components/ImageTrail';
@@ -46,7 +45,6 @@ function App() {
           <HowItWorks />
           <ImageTrail direction="ltr" loopDuration={30} images={leftToRightImages} />
           <Volunteer />
-          <DonorWall />
           <Footer />
         </>
       )}

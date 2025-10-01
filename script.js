@@ -354,39 +354,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Donor wall functionality
-    const donorList = document.getElementById('donor-list');
-    const sampleDonors = [
-        { name: 'Priya Sharma', amount: '₹999' },
-        { name: 'Rajesh Kumar', amount: '₹1499' },
-        { name: 'Anita Singh', amount: '₹499' },
-        { name: 'Vikram Patel', amount: '₹999' },
-        { name: 'Sunita Devi', amount: '₹1499' },
-        { name: 'Amit Gupta', amount: '₹499' },
-        { name: 'Kavita Joshi', amount: '₹999' },
-        { name: 'Rohit Mehta', amount: '₹1499' }
-    ];
-
-    const displayDonors = () => {
-        donorList.innerHTML = '';
-        const shuffledDonors = [...sampleDonors].sort(() => Math.random() - 0.5);
-        const visibleDonors = shuffledDonors.slice(0, 6);
-        
-        visibleDonors.forEach((donor, index) => {
-            const donorItem = document.createElement('div');
-            donorItem.className = 'donor-item';
-            donorItem.style.animationDelay = `${index * 0.1}s`;
-            donorItem.innerHTML = `
-                <span class="donor-name">${donor.name}</span>
-                <span class="donor-amount">${donor.amount}</span>
-            `;
-            donorList.appendChild(donorItem);
-        });
-    };
-
-    // Initial display and auto-refresh every 5 seconds
-    displayDonors();
-    setInterval(displayDonors, 5000);
 
     // Button click handlers
     document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
