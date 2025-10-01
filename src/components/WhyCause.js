@@ -18,6 +18,18 @@ const WhyCause = () => {
         </motion.h2>
         
         <div className="why-content">
+          {/* Left Diya */}
+          <motion.div 
+            className="diya-decoration left-diya"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="diya-body"></div>
+            <div className="diya-flame"></div>
+          </motion.div>
+
           <motion.div 
             className="why-text"
             initial={{ opacity: 0, x: -50 }}
@@ -30,6 +42,18 @@ const WhyCause = () => {
               <h3>Our Mission</h3>
               <p>"We aim to bring sweets, smiles, and hope to underprivileged children this festive season."</p>
             </div>
+          </motion.div>
+
+          {/* Right Diya */}
+          <motion.div 
+            className="diya-decoration right-diya"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="diya-body"></div>
+            <div className="diya-flame"></div>
           </motion.div>
         </div>
       </div>

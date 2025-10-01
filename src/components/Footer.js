@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { collection, addDoc, getDocs, orderBy, limit, query } from 'firebase/firestore';
+import { db } from '../firebase';
+import DonorSlider from './DonorSlider';
+import { sendDonationNotification } from '../services/emailService';
+import { sendSimpleDonationNotification } from '../services/simpleEmailService';
 import './Footer.css';
 
 const Footer = () => {
@@ -12,6 +17,7 @@ const Footer = () => {
     pincode: ''
   });
   const [showQRModal, setShowQRModal] = useState(false);
+  const [recentDonors, setRecentDonors] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,14 +27,84 @@ const Footer = () => {
     }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Show QR modal instead of submitting form
-    setShowQRModal(true);
+    
+    try {
+      // Save donor data to Firebase
+      const donorData = {
+        fullName: formData.fullName,
+        whatsapp: formData.whatsappNumber,
+        email: formData.email,
+        currency: formData.currency,
+        kit: formData.kit,
+        amount: formData.kit === 'custom' ? formData.amount : formData.kit,
+        pincode: formData.pincode,
+        date: new Date()
+      };
+
+      await addDoc(collection(db, 'donors'), donorData);
+      
+      // Send email notification
+      try {
+        // Try EmailJS first
+        const emailResult = await sendDonationNotification(donorData);
+        if (!emailResult.success) {
+          // Fallback to simple email service
+          await sendSimpleDonationNotification(donorData);
+        }
+        console.log('Email notification sent successfully');
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Try fallback method
+        try {
+          await sendSimpleDonationNotification(donorData);
+          console.log('Fallback email notification sent');
+        } catch (fallbackError) {
+          console.error('All email methods failed:', fallbackError);
+        }
+        // Don't block the donation process if email fails
+      }
+      
+      // Update recent donors list
+      await fetchRecentDonors();
+      
+      // Show QR modal
+      setShowQRModal(true);
+      
+      // Reset form
+      setFormData({
+        currency: '',
+        kit: '',
+        amount: '',
+        fullName: '',
+        whatsappNumber: '',
+        email: '',
+        pincode: ''
+      });
+      
+    } catch (error) {
+      console.error('Error saving donor:', error);
+      alert('Error saving donation. Please try again.');
+    }
   };
 
   const handleCloseQRModal = () => {
     setShowQRModal(false);
+  };
+
+  const fetchRecentDonors = async () => {
+    try {
+      const q = query(collection(db, 'donors'), orderBy('date', 'desc'), limit(10));
+      const querySnapshot = await getDocs(q);
+      const donors = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setRecentDonors(donors);
+    } catch (error) {
+      console.error('Error fetching donors:', error);
+    }
   };
 
   // Focus on name field only when user scrolls to contact section
@@ -54,6 +130,11 @@ const Footer = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Load recent donors on component mount
+  useEffect(() => {
+    fetchRecentDonors();
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Donation form submitted:', formData);
@@ -69,11 +150,11 @@ const Footer = () => {
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', marginBottom: '20px', color: '#FFD700' }}>Contact Us</h3>
               <p style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <i className="fas fa-envelope" style={{ color: '#FFD700', width: '20px' }}></i>
-                contact@sharethesmile.org
+                ayush.shukla@adypu.edu.in
               </p>
               <p style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <i className="fas fa-phone" style={{ color: '#FFD700', width: '20px' }}></i>
-                +91 98765 43210
+                +91 83608 19091
               </p>
               
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', marginBottom: '20px', color: '#FFD700' }}>Follow Us</h3>
@@ -256,6 +337,11 @@ const Footer = () => {
           <p>Built by students to make a difference. © 2024 Share the Smile</p>
         </div>
       </div>
+
+      {/* Recent Donors Slider */}
+      {recentDonors.length > 0 && (
+        <DonorSlider donors={recentDonors} />
+      )}
 
       {/* QR Code Modal */}
       {showQRModal && (
