@@ -170,12 +170,12 @@ const Hero = () => {
           transition={{ duration: 1, delay: 1.1 }}
           style={{
             position: 'relative',
-            background: 'rgba(255, 255, 255, 0.95)',
+            background: 'rgba(255, 255, 255, 0.1)',
             border: '2px solid #800000',
             borderRadius: '15px',
             padding: '25px',
-            margin: '30px auto',
-            maxWidth: '600px',
+            margin: '30px 20px',
+            maxWidth: 'calc(100% - 40px)',
             textAlign: 'center',
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
             backdropFilter: 'blur(10px)'
@@ -184,12 +184,13 @@ const Hero = () => {
           <div 
             style={{
               position: 'absolute',
-              top: '-15px',
-              left: '-15px',
-              fontSize: '60px',
-              color: '#800000',
+              top: '-20px',
+              left: '-20px',
+              fontSize: '80px',
+              color: 'white',
               fontFamily: 'serif',
-              lineHeight: '1'
+              lineHeight: '1',
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
             }}
           >
             "
@@ -197,19 +198,20 @@ const Hero = () => {
           <div 
             style={{
               position: 'absolute',
-              bottom: '-15px',
-              right: '-15px',
-              fontSize: '60px',
-              color: '#800000',
+              bottom: '-20px',
+              right: '-20px',
+              fontSize: '80px',
+              color: 'white',
               fontFamily: 'serif',
-              lineHeight: '1'
+              lineHeight: '1',
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
             }}
           >
             "
           </div>
           <p 
             style={{
-              color: '#800000',
+              color: '#FFD700',
               fontSize: '1.1rem',
               lineHeight: '1.6',
               margin: '0',

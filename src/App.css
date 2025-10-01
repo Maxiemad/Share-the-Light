@@ -164,7 +164,7 @@ body {
   .volunteer-section,
   .footer {
     margin: 0 10px !important;
-    padding: 50px 0 !important;
+    padding: 30px 0 !important;
     position: relative;
     z-index: 1;
     width: calc(100vw - 20px);
@@ -288,8 +288,18 @@ body {
   
   /* Prevent content overlap */
   .section-title {
-    margin-bottom: 20px !important;
+    margin-bottom: 15px !important;
     line-height: 1.2 !important;
+  }
+  
+  /* Reduce gaps between sections on mobile */
+  .hero-section + .why-cause-section,
+  .why-cause-section + .kits-section,
+  .kits-section + .impact-section,
+  .impact-section + .how-it-works-section,
+  .how-it-works-section + .volunteer-section,
+  .volunteer-section + .footer {
+    margin-top: -20px !important;
   }
 }
 
@@ -307,7 +317,7 @@ body {
   .volunteer-section,
   .footer {
     margin: 0 10px !important;
-    padding: 40px 0 !important;
+    padding: 25px 0 !important;
     position: relative;
     z-index: 1;
     width: calc(100vw - 20px);
@@ -405,8 +415,18 @@ body {
   
   /* Ensure consistent spacing */
   .section-title {
-    margin-bottom: 15px !important;
+    margin-bottom: 10px !important;
     line-height: 1.1 !important;
+  }
+  
+  /* Further reduce gaps between sections on very small screens */
+  .hero-section + .why-cause-section,
+  .why-cause-section + .kits-section,
+  .kits-section + .impact-section,
+  .impact-section + .how-it-works-section,
+  .how-it-works-section + .volunteer-section,
+  .volunteer-section + .footer {
+    margin-top: -30px !important;
   }
 }
 

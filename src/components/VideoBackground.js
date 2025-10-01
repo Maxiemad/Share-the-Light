@@ -96,6 +96,12 @@ const VideoBackground = () => {
         playsInline
         webkit-playsinline="true"
         onError={handleVideoError}
+        onLoadedData={() => {
+          const video = document.querySelector('.background-video');
+          if (video) {
+            video.play().catch(e => console.log('Auto-play failed:', e));
+          }
+        }}
         style={{
           width: '100%',
           height: '100%',
