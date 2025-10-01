@@ -22,9 +22,9 @@ body {
   min-height: 100vh;
 }
 
-/* Reserve space for fixed header */
+/* Reserve space for fixed header - disabled since header is relative now */
 .App {
-	padding-top: 64px;
+	padding-top: 0;
 }
 
 .container {
