@@ -111,28 +111,7 @@ const Footer = () => {
     }
   };
 
-  // Focus on name field only when user scrolls to contact section
-  useEffect(() => {
-    const handleScroll = () => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        const rect = contactSection.getBoundingClientRect();
-        // Only focus when contact section is visible
-        if (rect.top >= 0 && rect.top <= window.innerHeight) {
-          const nameInput = document.querySelector('input[name="fullName"]');
-          if (nameInput && document.activeElement !== nameInput) {
-            nameInput.focus();
-          }
-        }
-      }
-    };
-
-    // Add scroll listener
-    window.addEventListener('scroll', handleScroll);
-    
-    // Cleanup
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Removed auto-focus scroll handler to prevent unwanted scrolling
 
   // Load recent donors on component mount
   useEffect(() => {

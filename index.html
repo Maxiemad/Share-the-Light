@@ -407,13 +407,6 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
-                // Focus on the name field after scrolling completes
-                setTimeout(() => {
-                    const nameInput = contactSection.querySelector('input[type="text"]');
-                    if (nameInput && document.activeElement !== nameInput) {
-                        nameInput.focus();
-                    }
-                }, 800);
             }
         }
 
