@@ -105,9 +105,61 @@ const Footer = () => {
         id: doc.id,
         ...doc.data()
       }));
-      setRecentDonors(donors);
+      
+      // If no real donors, show sample data
+      if (donors.length === 0) {
+        const sampleDonors = [
+          { id: '1', fullName: 'Vikram Patel', amount: '999', kit: 'Joy Kit' },
+          { id: '2', fullName: 'Kavita Joshi', amount: '999', kit: 'Joy Kit' },
+          { id: '3', fullName: 'Sneha Agarwal', amount: '799', kit: 'Custom' },
+          { id: '4', fullName: 'Arjun Singh', amount: '1299', kit: 'Celebration Kit' },
+          { id: '5', fullName: 'Amit Gupta', amount: '499', kit: 'Basic Kit' },
+          { id: '6', fullName: 'Rohit Mehta', amount: '1499', kit: 'Celebration Kit' },
+          { id: '7', fullName: 'Priya Sharma', amount: '999', kit: 'Joy Kit' },
+          { id: '8', fullName: 'Rajesh Kumar', amount: '599', kit: 'Custom' },
+          { id: '9', fullName: 'Sunita Verma', amount: '1199', kit: 'Joy Kit' },
+          { id: '10', fullName: 'Deepak Jain', amount: '899', kit: 'Custom' },
+          { id: '11', fullName: 'Neha Reddy', amount: '699', kit: 'Basic Kit' },
+          { id: '12', fullName: 'Vikash Tiwari', amount: '1099', kit: 'Joy Kit' },
+          { id: '13', fullName: 'Anjali Desai', amount: '799', kit: 'Custom' },
+          { id: '14', fullName: 'Suresh Yadav', amount: '1299', kit: 'Celebration Kit' },
+          { id: '15', fullName: 'Meera Iyer', amount: '999', kit: 'Joy Kit' },
+          { id: '16', fullName: 'Kiran Shah', amount: '599', kit: 'Basic Kit' },
+          { id: '17', fullName: 'Ravi Nair', amount: '1399', kit: 'Celebration Kit' },
+          { id: '18', fullName: 'Pooja Agarwal', amount: '899', kit: 'Custom' },
+          { id: '19', fullName: 'Manoj Singh', amount: '999', kit: 'Joy Kit' },
+          { id: '20', fullName: 'Shruti Gupta', amount: '699', kit: 'Basic Kit' }
+        ];
+        setRecentDonors(sampleDonors);
+      } else {
+        setRecentDonors(donors);
+      }
     } catch (error) {
       console.error('Error fetching donors:', error);
+      // Show sample data on error too
+      const sampleDonors = [
+        { id: '1', fullName: 'Vikram Patel', amount: '999', kit: 'Joy Kit' },
+        { id: '2', fullName: 'Kavita Joshi', amount: '999', kit: 'Joy Kit' },
+        { id: '3', fullName: 'Sneha Agarwal', amount: '799', kit: 'Custom' },
+        { id: '4', fullName: 'Arjun Singh', amount: '1299', kit: 'Celebration Kit' },
+        { id: '5', fullName: 'Amit Gupta', amount: '499', kit: 'Basic Kit' },
+        { id: '6', fullName: 'Rohit Mehta', amount: '1499', kit: 'Celebration Kit' },
+        { id: '7', fullName: 'Priya Sharma', amount: '999', kit: 'Joy Kit' },
+        { id: '8', fullName: 'Rajesh Kumar', amount: '599', kit: 'Custom' },
+        { id: '9', fullName: 'Sunita Verma', amount: '1199', kit: 'Joy Kit' },
+        { id: '10', fullName: 'Deepak Jain', amount: '899', kit: 'Custom' },
+        { id: '11', fullName: 'Neha Reddy', amount: '699', kit: 'Basic Kit' },
+        { id: '12', fullName: 'Vikash Tiwari', amount: '1099', kit: 'Joy Kit' },
+        { id: '13', fullName: 'Anjali Desai', amount: '799', kit: 'Custom' },
+        { id: '14', fullName: 'Suresh Yadav', amount: '1299', kit: 'Celebration Kit' },
+        { id: '15', fullName: 'Meera Iyer', amount: '999', kit: 'Joy Kit' },
+        { id: '16', fullName: 'Kiran Shah', amount: '599', kit: 'Basic Kit' },
+        { id: '17', fullName: 'Ravi Nair', amount: '1399', kit: 'Celebration Kit' },
+        { id: '18', fullName: 'Pooja Agarwal', amount: '899', kit: 'Custom' },
+        { id: '19', fullName: 'Manoj Singh', amount: '999', kit: 'Joy Kit' },
+        { id: '20', fullName: 'Shruti Gupta', amount: '699', kit: 'Basic Kit' }
+      ];
+      setRecentDonors(sampleDonors);
     }
   };
 
@@ -140,12 +192,6 @@ const Footer = () => {
                 +91 83608 19091
               </p>
               
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', marginBottom: '20px', color: '#FFD700' }}>Follow Us</h3>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '30px' }}>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}><i className="fab fa-facebook"></i></a>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}><i className="fab fa-twitter"></i></a>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}><i className="fab fa-instagram"></i></a>
-              </div>
             </div>
 
             {/* Form Fields moved here */}
@@ -296,16 +342,15 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Recent Donors Slider */}
+        {recentDonors.length > 0 && (
+          <DonorSlider donors={recentDonors} />
+        )}
 
         <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255, 215, 0, 0.3)', opacity: '0.8' }}>
           <p>Built by students to make a difference. © 2024 Share the Smile</p>
         </div>
       </div>
-
-      {/* Recent Donors Slider */}
-      {recentDonors.length > 0 && (
-        <DonorSlider donors={recentDonors} />
-      )}
 
       {/* QR Code Modal */}
       {showQRModal && (

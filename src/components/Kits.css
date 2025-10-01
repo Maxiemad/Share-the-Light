@@ -19,13 +19,13 @@
   border: 2px solid transparent;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  padding: 40px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  min-height: 560px;
+  min-height: 200px;
 }
 
 .kit-card.is-selected {
@@ -39,46 +39,50 @@
 }
 
 .kit-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
 }
 
 .kit-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
   color: #800000;
 }
 
 .kit-price {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #FF8C00;
-  margin: 20px 0;
+  margin: 8px 0;
 }
 
 .kit-features-title {
   font-weight: 700;
   color: #800000;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   width: 100%;
   text-align: left;
+  font-size: 0.85rem;
 }
 
 .kit-items {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px 0;
+  margin: 0 0 12px 0;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
 }
 
 .kit-item {
   display: grid;
-  grid-template-columns: 28px 1fr;
+  grid-template-columns: 16px 1fr;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
   color: #333333;
-  padding: 10px 0;
+  padding: 4px 0;
   text-align: left;
   border-bottom: 1px dashed #eee;
 }
@@ -88,11 +92,11 @@
 }
 
 .kit-item-icon {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .kit-item-text {
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
 .kit-spacer {
@@ -105,9 +109,9 @@
   background: linear-gradient(45deg, #FFD700, #FF8C00);
   color: #ffffff;
   border: none;
-  padding: 15px 30px;
+  padding: 10px 20px;
   border-radius: 50px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
@@ -409,7 +413,12 @@
   }
   .kit-card {
     min-height: unset;
-    padding: 28px;
+    padding: 15px;
+  }
+  
+  .kit-items {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px 10px !important;
   }
   
   .section-title {
@@ -427,6 +436,15 @@
   
   .kits-grid {
     gap: 15px !important;
+  }
+  
+  .kit-items {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 5px 8px !important;
+  }
+  
+  .kit-card {
+    padding: 12px;
   }
   
   .section-title {

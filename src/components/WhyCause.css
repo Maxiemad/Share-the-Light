@@ -1,7 +1,7 @@
 /* Why Cause Section */
 .why-cause-section {
   height: 100vh;
-  padding: 70px 0;
+  padding: 35px 0;
   background: transparent;
   position: relative;
   margin: 0 80px;
@@ -203,8 +203,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .why-cause-section {
-    margin: 0 10px !important;
-    padding: 50px 0 !important;
+    margin: -20px 10px 0 10px !important;
+    padding: 15px 0 !important;
     position: relative;
     z-index: 1;
   }
@@ -228,6 +228,10 @@
     top: auto !important;
     transform: none !important;
     margin: 10px auto !important;
+  }
+  
+  .left-diya {
+    display: none !important;
   }
   
   .diya-body {
@@ -261,8 +265,8 @@
 
 @media (max-width: 480px) {
   .why-cause-section {
-    margin: 0 5px !important;
-    padding: 30px 0 !important;
+    margin: -15px 5px 0 5px !important;
+    padding: 10px 0 !important;
   }
   
   .why-content {
@@ -279,6 +283,10 @@
     font-size: 1.8rem;
     margin-bottom: 12px;
     line-height: 1.1;
+  }
+  
+  .left-diya {
+    display: none !important;
   }
   
   .mission-statement p {
@@ -319,5 +327,9 @@
     width: 8px;
     height: 12px;
     top: -6px;
+  }
+  
+  .left-diya {
+    display: none !important;
   }
 }
