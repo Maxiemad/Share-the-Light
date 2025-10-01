@@ -12,6 +12,7 @@ import DonorWall from './components/DonorWall';
 import Footer from './components/Footer';
 import DecorativeBorder from './components/DecorativeBorder';
 import ImageTrail from './components/ImageTrail';
+import Header from './components/Header';
 import { leftToRightImages, rightToLeftImages } from './data/trailImages';
 import './App.css';
 
@@ -34,6 +35,7 @@ function App() {
       
       {!isLoading && (
         <>
+          <Header />
           <VideoBackground />
           <DecorativeBorder />
           <Hero />

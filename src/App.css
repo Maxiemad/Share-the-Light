@@ -22,6 +22,11 @@ body {
   min-height: 100vh;
 }
 
+/* Reserve space for fixed header */
+.App {
+	padding-top: 64px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

@@ -1,0 +1,40 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-logo.right {
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  .header-container { padding: 8px 15px; }
+  .header-logo { height: 32px; }
+  .header-logo.right { height: 75px; }
+}
+
+@media (max-width: 480px) {
+  .header-logo { height: 28px; }
+  .header-logo.right { height: 60px; }
+}
+
+
