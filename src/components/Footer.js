@@ -45,9 +45,9 @@ const Footer = () => {
               
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', marginBottom: '20px', color: '#FFD700' }}>Follow Us</h3>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '30px' }}>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}>📘</a>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}>🐦</a>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}>📷</a>
+                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}><i className="fab fa-facebook"></i></a>
+                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}><i className="fab fa-twitter"></i></a>
+                <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(255, 215, 0, 0.2)', borderRadius: '50%', color: '#FFD700', textDecoration: 'none', transition: 'all 0.3s ease' }}><i className="fab fa-instagram"></i></a>
               </div>
             </div>
 
@@ -200,7 +200,7 @@ const Footer = () => {
               <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#FFD700' }}>For UPI & QR</h4>
               <div style={{ textAlign: 'center', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '10px', marginBottom: '10px' }}>
                 <div style={{ width: '80px', height: '80px', background: 'white', borderRadius: '8px', margin: '0 auto 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ fontSize: '2rem' }}>📱</div>
+                  <i className="fas fa-mobile-alt" style={{ fontSize: '2rem' }}></i>
                 </div>
                 <p style={{ margin: '0', fontSize: '0.9rem', color: '#FFD700' }}>xxxx.xxxx@xxxx</p>
               </div>
@@ -216,7 +216,7 @@ const Footer = () => {
               </div>
               
               <div style={{ marginTop: '15px', padding: '10px', background: 'rgba(255, 215, 0, 0.1)', borderRadius: '8px', fontSize: '0.8rem' }}>
-                <p style={{ margin: '0', color: '#FFD700' }}>💝 (Kindly send us a screenshot for your seva entry)</p>
+                <p style={{ margin: '0', color: '#FFD700' }}><i className="fas fa-gift" style={{ marginRight: '5px' }}></i>(Kindly send us a screenshot for your seva entry)</p>
               </div>
             </div>
           </div>
