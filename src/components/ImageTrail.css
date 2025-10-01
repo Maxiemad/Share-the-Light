@@ -5,6 +5,9 @@
   background: linear-gradient(135deg, #FFD700, #FF8C00);
   padding: 40px 0;
   position: relative;
+  margin: 0 80px; /* align with other sections on desktop */
+  border-radius: 16px;
+  --trail-gap: 24px;
 }
 
 .image-trail-wrapper {
@@ -12,6 +15,7 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
+  touch-action: pan-y; /* allow vertical scroll, reduce horizontal hijack */
 }
 
 .image-trail-row {
@@ -21,18 +25,20 @@
 
 .image-trail-items {
   display: flex;
-  gap: 30px;
-  padding: 0 30px;
+  gap: var(--trail-gap);
+  padding: 0; /* avoid edge padding to prevent seam collision */
   height: 100%;
+  will-change: transform;
 }
+
+.image-trail-gap { flex: 0 0 var(--trail-gap); width: var(--trail-gap); height: 1px; }
 
 .image-trail-item {
   flex-shrink: 0;
   height: 100%;
-  width: 180px; /* Fixed width to prevent overlapping */
-  margin-right: 30px; /* Consistent spacing */
-  min-width: 180px; /* Force minimum width */
-  max-width: 180px; /* Force maximum width */
+  width: 160px; /* Fixed width to prevent overlapping */
+  min-width: 160px; /* Force minimum width */
+  max-width: 160px; /* Force maximum width */
 }
 
 .image-trail-item-wrapper {
@@ -66,6 +72,9 @@
   .image-trail-container {
     padding: 40px 0;
     overflow: hidden !important; /* Force prevent horizontal overflow */
+    margin: 0 10px !important; /* align within decorative borders */
+    border-radius: 12px;
+    --trail-gap: 20px;
   }
   
   .image-trail-wrapper {
@@ -73,19 +82,19 @@
     overflow: hidden !important; /* Force prevent overflow */
     position: relative;
     width: 100% !important;
+    touch-action: pan-y;
   }
   
   .image-trail-item-wrapper {
-    width: 140px !important;
+    width: 140px !important; /* matches .image-trail-item */
     flex-shrink: 0 !important; /* Force prevent shrinking */
-    margin-right: 25px !important; /* Force consistent spacing */
     min-width: 140px !important; /* Force minimum width */
     max-width: 140px !important; /* Force maximum width */
   }
   
   .image-trail-items {
-    gap: 25px !important;
-    padding: 0 25px !important;
+    gap: var(--trail-gap) !important;
+    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     flex-wrap: nowrap !important; /* Prevent wrapping */
@@ -103,6 +112,9 @@
   .image-trail-container {
     padding: 35px 0;
     overflow: hidden !important; /* Force prevent horizontal overflow */
+    margin: 0 5px !important;
+    border-radius: 12px;
+    --trail-gap: 16px;
   }
   
   .image-trail-wrapper {
@@ -110,19 +122,19 @@
     overflow: hidden !important; /* Force prevent overflow */
     position: relative;
     width: 100% !important;
+    touch-action: pan-y;
   }
   
   .image-trail-item-wrapper {
     width: 120px !important;
     flex-shrink: 0 !important; /* Force prevent shrinking */
-    margin-right: 20px !important; /* Force consistent spacing */
     min-width: 120px !important; /* Force minimum width */
     max-width: 120px !important; /* Force maximum width */
   }
   
   .image-trail-items {
-    gap: 20px !important;
-    padding: 0 20px !important;
+    gap: var(--trail-gap) !important;
+    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     flex-wrap: nowrap !important; /* Force prevent wrapping */
