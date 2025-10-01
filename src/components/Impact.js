@@ -49,7 +49,7 @@ const Impact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Your Impact Last Year
+          Our Impact Last Year
         </motion.h2>
         
         <div className="impact-stats">
