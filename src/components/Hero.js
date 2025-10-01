@@ -16,6 +16,7 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, []);
 
+
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -138,7 +139,17 @@ const Hero = () => {
   const handleSeeKitsClick = () => {
     const kitsSection = document.getElementById('kits');
     if (kitsSection) {
-      kitsSection.scrollIntoView({ 
+      kitsSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleDonateClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -219,7 +230,8 @@ const Hero = () => {
               fontWeight: '400'
             }}
           >
-            This Diwali, let's celebrate not just with lights and joy, but also with kindness and compassion. <strong>Newton School of Technology</strong> with college's <strong>SETU Club</strong> is organizing a donation drive to support the <strong>Sant Ishwar Foundation – GHAR</strong>, a home that provides care, education, and love to orphaned and vulnerable girls, women with disabilities, and elderly individuals.
+            This Diwali, Newton School of Technology with college’s SETU Club is leading Project SEVA, a social initiative to support the Sant Ishwar Foundation – GHAR, a home for orphaned and vulnerable girls, women with disabilities, and elderly individuals.
+
           </p>
         </motion.div>
         
@@ -238,7 +250,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
         >
-          <button className="btn-primary">Donate Now</button>
+          <button className="btn-primary" onClick={handleDonateClick}>Donate Now</button>
           <button className="btn-secondary" onClick={handleSeeKitsClick}>See Kits</button>
           <button 
             id="audio-toggle-btn" 

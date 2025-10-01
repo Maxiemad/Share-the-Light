@@ -38,6 +38,19 @@ body {
   position: relative;
 }
 
+
+/* QR Modal Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Desktop section gap optimization */
 @media (min-width: 769px) {
   /* Reduce gaps between sections on desktop */

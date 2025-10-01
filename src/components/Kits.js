@@ -108,7 +108,15 @@ const Kits = () => {
               <div className="kit-spacer" />
               <button
                 className="kit-cta"
-                onClick={() => { setIsModalOpen(true); setModalKit(kit); setModalStage('form'); }}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }
+                }}
               >
                 Donate This Kit
               </button>

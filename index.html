@@ -37,6 +37,7 @@
     <div class="decorative-border left-border"></div>
     <div class="decorative-border right-border"></div>
 
+
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
         <div id="particles-js"></div>
@@ -61,8 +62,8 @@
                 <div style="position: absolute; top: -20px; left: -20px; font-size: 80px; color: white; font-family: serif; line-height: 1; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">"</div>
                 <div style="position: absolute; bottom: -20px; right: -20px; font-size: 80px; color: white; font-family: serif; line-height: 1; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">"</div>
                 <p style="color: #FFD700; font-size: 1.1rem; line-height: 1.6; margin: 0; font-family: 'Poppins', sans-serif; font-weight: 400;">
-                    This Diwali, let's celebrate not just with lights and joy, but also with kindness and compassion. <strong>Newton School of Technology</strong> with college's <strong>SETU Club</strong> is organizing a donation drive to support the <strong>Sant Ishwar Foundation – GHAR</strong>, a home that provides care, education, and love to orphaned and vulnerable girls, women with disabilities, and elderly individuals.
-                </p>
+                    This Diwali, Newton School of Technology with college’s SETU Club is leading Project SEVA, a social initiative to support the Sant Ishwar Foundation – GHAR, a home for orphaned and vulnerable girls, women with disabilities, and elderly individuals.
+</p>
             </div>
             
             <p class="hero-subtitle">Join us in spreading joy by donating Diwali kits to children and families in need.</p>
@@ -118,7 +119,7 @@
                         <li><i class="fas fa-fire"></i> Diyas</li>
                         <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
                     </ul>
-                    <button class="kit-donate-btn">Donate This Kit</button>
+                    <button class="kit-donate-btn" onclick="scrollToContact()">Donate This Kit</button>
                 </div>
                 
                 <div class="kit-card featured">
@@ -134,7 +135,7 @@
                         <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
                         <li><i class="fas fa-gamepad"></i> Toys</li>
                     </ul>
-                    <button class="kit-donate-btn">Donate This Kit</button>
+                    <button class="kit-donate-btn" onclick="scrollToContact()">Donate This Kit</button>
                 </div>
                 
                 <div class="kit-card">
@@ -152,7 +153,7 @@
                         <li><i class="fas fa-lightbulb"></i> Lanterns</li>
                         <li><i class="fas fa-plus"></i> Extra Goodies</li>
                     </ul>
-                    <button class="kit-donate-btn">Donate This Kit</button>
+                    <button class="kit-donate-btn" onclick="scrollToContact()">Donate This Kit</button>
                 </div>
             </div>
         </div>
@@ -294,7 +295,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -312,12 +313,71 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Donate</h3>
-                    <div class="qr-code">
-                        <div class="qr-placeholder">
-                            <i class="fas fa-qrcode"></i>
-                            <p>Scan for UPI</p>
+                    <h3>Quick Contact</h3>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-size: 0.8rem; color: #FFD700;">Full Name</label>
+                                <input type="text" placeholder="Enter your full name" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white; color: #333; font-size: 0.9rem;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-size: 0.8rem; color: #FFD700;">WhatsApp Number (Optional)</label>
+                                <input type="tel" placeholder="Enter WhatsApp number" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white; color: #333; font-size: 0.9rem;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-size: 0.8rem; color: #FFD700;">Email (Optional)</label>
+                                <input type="email" placeholder="Enter your email" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white; color: #333; font-size: 0.9rem;">
+                            </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Make a Donation</h3>
+                    <form style="display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #FFD700;">Currency</label>
+                            <select style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white; color: #333;" required>
+                                <option value="">Select Currency</option>
+                                <option value="indian">Indian Currency</option>
+                                <option value="non-indian">Non-Indian Currency</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #FFD700;">Select Kit</label>
+                            <select style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white; color: #333;" required>
+                                <option value="">Select Kit</option>
+                                <option value="100">₹100 Kit</option>
+                                <option value="500">₹500 Kit</option>
+                                <option value="1500">₹1500 Kit</option>
+                                <option value="custom">Custom Amount</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #FFD700;">Amount</label>
+                            <input type="number" placeholder="Amount will be set based on kit selection" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: #f5f5f5; color: #333;" readonly>
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #FFD700;">Pincode</label>
+                            <input type="text" placeholder="Enter pincode" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white; color: #333;" required>
+                        </div>
+                        
+                        <button type="submit" style="background: linear-gradient(45deg, #FFD700, #FF8C00); color: white; border: none; padding: 12px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 10px;">
+                            Donate
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Donate</h3>
+                    <div class="qr-code" style="text-align: center; padding: 30px; background: rgba(255, 140, 0, 0.2); border-radius: 15px; margin-bottom: 10px;">
+                        <div class="qr-placeholder" style="width: 300px; height: 300px; background: white; border-radius: 12px; margin: 0 auto 25px; display: flex; align-items: center; justify-content: center; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                            <img src="QR.jpg" alt="QR Code for payment" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="margin: 0; font-size: 1.2rem; color: #FFD700; font-weight: 500;">ydvvipul2005@okicici</p>
                     </div>
                 </div>
             </div>
@@ -333,12 +393,30 @@
         function scrollToKits() {
             const kitsSection = document.getElementById('kits');
             if (kitsSection) {
-                kitsSection.scrollIntoView({ 
+                kitsSection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
             }
         }
+
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Focus on the name field after scrolling completes
+                setTimeout(() => {
+                    const nameInput = contactSection.querySelector('input[type="text"]');
+                    if (nameInput && document.activeElement !== nameInput) {
+                        nameInput.focus();
+                    }
+                }, 800);
+            }
+        }
+
 
         // Audio toggle functionality
         document.addEventListener('DOMContentLoaded', function() {

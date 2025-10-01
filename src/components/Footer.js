@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Footer.css';
 
 const Footer = () => {
   const [formData, setFormData] = useState({
     currency: '',
-    seva: '',
+    kit: '',
     amount: '',
     fullName: '',
     whatsappNumber: '',
     email: '',
-    dateOfBirth: '',
     pincode: ''
   });
+  const [showQRModal, setShowQRModal] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,13 +21,46 @@ const Footer = () => {
     }));
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Show QR modal instead of submitting form
+    setShowQRModal(true);
+  };
+
+  const handleCloseQRModal = () => {
+    setShowQRModal(false);
+  };
+
+  // Focus on name field only when user scrolls to contact section
+  useEffect(() => {
+    const handleScroll = () => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        // Only focus when contact section is visible
+        if (rect.top >= 0 && rect.top <= window.innerHeight) {
+          const nameInput = document.querySelector('input[name="fullName"]');
+          if (nameInput && document.activeElement !== nameInput) {
+            nameInput.focus();
+          }
+        }
+      }
+    };
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Donation form submitted:', formData);
   };
 
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
       <div className="container">
         <div className="footer-grid">
           {/* Contact Us, Follow Us, and Form Fields */}
@@ -69,7 +102,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#FFD700' }}>WhatsApp Number</label>
+                  <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#FFD700' }}>WhatsApp Number (Optional)</label>
                   <input 
                     type="tel" 
                     name="whatsappNumber"
@@ -81,7 +114,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#FFD700' }}>Email</label>
+                  <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#FFD700' }}>Email (Optional)</label>
                   <input 
                     type="email" 
                     name="email"
@@ -99,7 +132,7 @@ const Footer = () => {
           <div style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '30px', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
             <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', marginBottom: '20px', color: '#FFD700', textAlign: 'center' }}>Make a Donation</h3>
             
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <div>
                 <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>Currency</label>
                 <select 
@@ -116,49 +149,39 @@ const Footer = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>Select Seva</label>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>Select Kit</label>
                 <select 
-                  name="seva" 
-                  value={formData.seva}
+                  name="kit" 
+                  value={formData.kit}
                   onChange={handleInputChange}
                   style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ddd', background: 'white', color: '#333' }}
                   required
                 >
-                  <option value="">Select Seva</option>
-                  <option value="food">Food Distribution</option>
-                  <option value="education">Education Support</option>
-                  <option value="medical">Medical Aid</option>
-                  <option value="general">General Donation</option>
+                  <option value="">Select Kit</option>
+                  <option value="100">₹100 Kit</option>
+                  <option value="500">₹500 Kit</option>
+                  <option value="1500">₹1500 Kit</option>
+                  <option value="custom">Custom Amount</option>
                 </select>
               </div>
 
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>Amount?</label>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>
+                  {formData.kit === 'custom' ? 'Custom Amount' : 'Amount'}
+                </label>
                 <input 
                   type="number" 
                   name="amount"
-                  value={formData.amount}
+                  value={formData.kit === 'custom' ? formData.amount : formData.kit}
                   onChange={handleInputChange}
-                  placeholder="Enter amount"
-                  style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ddd', background: 'white', color: '#333' }}
-                  required
+                  placeholder={formData.kit === 'custom' ? 'Enter custom amount' : 'Amount will be set based on kit selection'}
+                  style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ddd', background: formData.kit === 'custom' ? 'white' : '#f5f5f5', color: '#333' }}
+                  required={formData.kit === 'custom'}
+                  readOnly={formData.kit !== 'custom'}
                 />
               </div>
 
 
-              <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>Date of Birth (Optional)</label>
-                <input 
-                  type="date" 
-                  name="dateOfBirth"
-                  value={formData.dateOfBirth}
-                  onChange={handleInputChange}
-                  style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ddd', background: 'white', color: '#333' }}
-                />
-                <small style={{ display: 'block', marginTop: '3px', fontSize: '0.8rem', color: '#FFD700', fontStyle: 'italic' }}>
-                  Sankalp and Aarti will be performed for you on your birthday.
-                </small>
-              </div>
 
               <div>
                 <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', color: '#FFD700' }}>Pincode</label>
@@ -198,27 +221,14 @@ const Footer = () => {
             
             <div style={{ marginBottom: '20px' }}>
               <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#FFD700' }}>For UPI & QR</h4>
-              <div style={{ textAlign: 'center', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '10px', marginBottom: '10px' }}>
-                <div style={{ width: '80px', height: '80px', background: 'white', borderRadius: '8px', margin: '0 auto 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <i className="fas fa-mobile-alt" style={{ fontSize: '2rem' }}></i>
+              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255, 140, 0, 0.2)', borderRadius: '15px', marginBottom: '10px' }}>
+                <div style={{ width: '300px', height: '300px', background: 'white', borderRadius: '12px', margin: '0 auto 25px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '25px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)' }}>
+                  <img src="/QR.jpg" alt="QR Code for payment" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
-                <p style={{ margin: '0', fontSize: '0.9rem', color: '#FFD700' }}>xxxx.xxxx@xxxx</p>
+                <p style={{ margin: '0', fontSize: '1.2rem', color: '#FFD700', fontWeight: '500' }}>ydvvipul2005@okicici</p>
               </div>
             </div>
 
-            <div>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#FFD700' }}>For Bank Transfer</h4>
-              <div style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '15px', borderRadius: '10px', fontSize: '0.9rem' }}>
-                <p style={{ margin: '5px 0' }}><strong>Account Name:</strong> xxxx xxxx xxxx xxxx</p>
-                <p style={{ margin: '5px 0' }}><strong>Account Number:</strong> xxxxxxxxxxxxxxxx</p>
-                <p style={{ margin: '5px 0' }}><strong>Bank Name:</strong> xxxx xxxx</p>
-                <p style={{ margin: '5px 0' }}><strong>IFSC Code:</strong> xxxxxxxxxx</p>
-              </div>
-              
-              <div style={{ marginTop: '15px', padding: '10px', background: 'rgba(255, 215, 0, 0.1)', borderRadius: '8px', fontSize: '0.8rem' }}>
-                <p style={{ margin: '0', color: '#FFD700' }}><i className="fas fa-gift" style={{ marginRight: '5px' }}></i>(Kindly send us a screenshot for your seva entry)</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -246,8 +256,106 @@ const Footer = () => {
           <p>Built by students to make a difference. © 2024 Share the Smile</p>
         </div>
       </div>
+
+      {/* QR Code Modal */}
+      {showQRModal && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10000,
+          backdropFilter: 'blur(10px)'
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '20px',
+            padding: '40px',
+            textAlign: 'center',
+            maxWidth: '500px',
+            width: '90%',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+            animation: 'zoomIn 0.3s ease-out'
+          }}>
+            <h3 style={{ 
+              color: '#800000', 
+              marginBottom: '30px', 
+              fontSize: '1.5rem',
+              fontFamily: "'Playfair Display', serif"
+            }}>
+              Scan QR Code to Donate
+            </h3>
+            
+            <div style={{
+              width: '300px',
+              height: '300px',
+              background: 'white',
+              borderRadius: '15px',
+              margin: '0 auto 30px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+              border: '2px solid #FFD700'
+            }}>
+              <img 
+                src="/QR.jpg" 
+                alt="QR Code for payment" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'contain' 
+                }} 
+              />
+            </div>
+            
+            <p style={{ 
+              color: '#800000', 
+              fontSize: '1.1rem', 
+              marginBottom: '20px',
+              fontWeight: '500'
+            }}>
+              ydvvipul2005@okicici
+            </p>
+            
+            <button
+              onClick={handleCloseQRModal}
+              style={{
+                background: 'linear-gradient(135deg, #FFD700, #FF8C00, #800000)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '25px',
+                padding: '15px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                fontFamily: "'Playfair Display', serif",
+                cursor: 'pointer',
+                boxShadow: '0 8px 25px rgba(255, 215, 0, 0.4)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'translateY(-2px) scale(1.05)';
+                e.target.style.boxShadow = '0 12px 35px rgba(255, 215, 0, 0.6)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'translateY(0) scale(1)';
+                e.target.style.boxShadow = '0 8px 25px rgba(255, 215, 0, 0.4)';
+              }}
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
 
 export default Footer;
+
