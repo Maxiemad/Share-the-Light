@@ -1,7 +1,7 @@
 /* Impact Section Styles */
 .impact-section {
   height: 100vh;
-  padding: 70px 0;
+  padding: 20px 0;
   background: transparent;
   color: white;
   margin: 0 80px;
@@ -63,7 +63,7 @@
 @media (max-width: 768px) {
   .impact-section {
     margin: 0 10px !important;
-    padding: 60px 0 80px 0 !important;
+    padding: 20px 0 40px 0 !important;
     height: auto !important;
     min-height: auto !important;
     position: relative !important;
@@ -135,7 +135,7 @@
 @media (max-width: 480px) {
   .impact-section {
     margin: 0 5px !important;
-    padding: 40px 0 60px 0 !important;
+    padding: 15px 0 30px 0 !important;
     position: relative !important;
     z-index: 10 !important;
     background: transparent !important;
@@ -188,7 +188,7 @@
 /* Very small screens - ensure horizontal layout */
 @media (max-width: 360px) {
   .impact-section {
-    padding: 30px 0 50px 0 !important;
+    padding: 10px 0 25px 0 !important;
     position: relative !important;
     z-index: 10 !important;
   }

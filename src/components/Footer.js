@@ -30,6 +30,10 @@ const Footer = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
+    // Show QR modal immediately
+    setShowQRModal(true);
+    return; // Skip Firebase for now to test modal
+    
     try {
       // Save donor data to Firebase
       const donorData = {
@@ -44,6 +48,9 @@ const Footer = () => {
       };
 
       await addDoc(collection(db, 'donors'), donorData);
+      
+      // Show QR modal immediately
+      setShowQRModal(true);
       
       // Send email notification
       try {
@@ -68,9 +75,6 @@ const Footer = () => {
       
       // Update recent donors list
       await fetchRecentDonors();
-      
-      // Show QR modal
-      setShowQRModal(true);
       
       // Reset form
       setFormData({
@@ -277,22 +281,22 @@ const Footer = () => {
                 />
               </div>
 
-              <button 
-                type="submit" 
-                style={{ 
-                  background: 'linear-gradient(45deg, #FFD700, #FF8C00)', 
-                  color: 'white', 
-                  border: 'none', 
-                  padding: '12px', 
-                  borderRadius: '8px', 
-                  fontSize: '1rem', 
-                  fontWeight: '600', 
-                  cursor: 'pointer',
-                  marginTop: '10px'
-                }}
-              >
-                Donate
-              </button>
+            <button
+              type="submit"
+              style={{ 
+                background: 'linear-gradient(45deg, #FFD700, #FF8C00)', 
+                color: 'white', 
+                border: 'none', 
+                padding: '12px', 
+                borderRadius: '8px', 
+                fontSize: '1rem', 
+                fontWeight: '600', 
+                cursor: 'pointer',
+                marginTop: '10px'
+              }}
+            >
+              Donate
+            </button>
             </form>
           </div>
 
@@ -349,89 +353,61 @@ const Footer = () => {
           position: 'fixed',
           top: 0,
           left: 0,
-          width: '100vw',
-          height: '100vh',
+          width: '100%',
+          height: '100%',
           backgroundColor: 'rgba(0, 0, 0, 0.8)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          zIndex: 10000,
-          backdropFilter: 'blur(10px)'
+          zIndex: 999999
         }}>
           <div style={{
             background: 'white',
-            borderRadius: '20px',
             padding: '40px',
+            borderRadius: '20px',
             textAlign: 'center',
             maxWidth: '500px',
-            width: '90%',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
-            animation: 'zoomIn 0.3s ease-out'
+            width: '90%'
           }}>
-            <h3 style={{ 
-              color: '#800000', 
-              marginBottom: '30px', 
-              fontSize: '1.5rem',
-              fontFamily: "'Playfair Display', serif"
-            }}>
-              Scan QR Code to Donate
-            </h3>
+            <h2 style={{ color: '#800000', marginBottom: '20px' }}>
+              Gift Smiles
+            </h2>
             
             <div style={{
               width: '300px',
               height: '300px',
               background: 'white',
-              borderRadius: '15px',
-              margin: '0 auto 30px',
+              border: '2px solid #FFD700',
+              margin: '0 auto 20px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              padding: '20px',
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
-              border: '2px solid #FFD700'
+              justifyContent: 'center'
             }}>
               <img 
                 src="/QR.jpg" 
-                alt="QR Code for payment" 
+                alt="QR Code" 
                 style={{ 
                   width: '100%', 
                   height: '100%', 
-                  objectFit: 'contain' 
+                  objectFit: 'contain'
                 }} 
               />
             </div>
             
-            <p style={{ 
-              color: '#800000', 
-              fontSize: '1.1rem', 
-              marginBottom: '20px',
-              fontWeight: '500'
-            }}>
-              ydvvipul2005@okicici
+            <p style={{ color: '#800000', marginBottom: '20px' }}>
+              UPI ID: ydvvipul2005@okicici
             </p>
             
             <button
               onClick={handleCloseQRModal}
               style={{
-                background: 'linear-gradient(135deg, #FFD700, #FF8C00, #800000)',
+                background: '#FFD700',
                 color: 'white',
                 border: 'none',
-                borderRadius: '25px',
-                padding: '15px 40px',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                fontFamily: "'Playfair Display', serif",
+                padding: '15px 30px',
+                borderRadius: '10px',
                 cursor: 'pointer',
-                boxShadow: '0 8px 25px rgba(255, 215, 0, 0.4)',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.transform = 'translateY(-2px) scale(1.05)';
-                e.target.style.boxShadow = '0 12px 35px rgba(255, 215, 0, 0.6)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = 'translateY(0) scale(1)';
-                e.target.style.boxShadow = '0 8px 25px rgba(255, 215, 0, 0.4)';
+                fontSize: '1.1rem'
               }}
             >
               Done
