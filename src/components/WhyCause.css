@@ -10,6 +10,11 @@
   z-index: 1;
 }
 
+/* Increase spacing between the section title and the content */
+.why-cause-section .section-title {
+  margin-bottom: 56px;
+}
+
 .why-content {
   display: flex;
   justify-content: space-between;
@@ -208,6 +213,9 @@
     position: relative;
     z-index: 1;
   }
+  .why-cause-section .section-title {
+    margin-bottom: 40px !important;
+  }
   
   .why-content {
     flex-direction: column !important;
@@ -267,6 +275,9 @@
   .why-cause-section {
     margin: -15px 5px 0 5px !important;
     padding: 10px 0 !important;
+  }
+  .why-cause-section .section-title {
+    margin-bottom: 32px !important;
   }
   
   .why-content {

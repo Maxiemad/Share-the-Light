@@ -11,6 +11,11 @@
   z-index: 1;
 }
 
+/* Increase spacing between section title and stats */
+.impact-section .section-title {
+  margin-bottom: 56px;
+}
+
 .impact-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -69,6 +74,9 @@
     position: relative !important;
     z-index: 10 !important;
     background: transparent !important;
+  }
+  .impact-section .section-title {
+    margin-bottom: 40px !important;
   }
   
   .impact-stats {
@@ -139,6 +147,9 @@
     position: relative !important;
     z-index: 10 !important;
     background: transparent !important;
+  }
+  .impact-section .section-title {
+    margin-bottom: 30px !important;
   }
   
   .impact-stats {
