@@ -163,6 +163,64 @@ const Hero = () => {
           Light Up Lives This Diwali
         </motion.h1>
         
+        <motion.div 
+          className="quote-box"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.1 }}
+          style={{
+            position: 'relative',
+            background: 'rgba(255, 255, 255, 0.95)',
+            border: '2px solid #800000',
+            borderRadius: '15px',
+            padding: '25px',
+            margin: '30px auto',
+            maxWidth: '600px',
+            textAlign: 'center',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
+            backdropFilter: 'blur(10px)'
+          }}
+        >
+          <div 
+            style={{
+              position: 'absolute',
+              top: '-15px',
+              left: '-15px',
+              fontSize: '60px',
+              color: '#800000',
+              fontFamily: 'serif',
+              lineHeight: '1'
+            }}
+          >
+            "
+          </div>
+          <div 
+            style={{
+              position: 'absolute',
+              bottom: '-15px',
+              right: '-15px',
+              fontSize: '60px',
+              color: '#800000',
+              fontFamily: 'serif',
+              lineHeight: '1'
+            }}
+          >
+            "
+          </div>
+          <p 
+            style={{
+              color: '#800000',
+              fontSize: '1.1rem',
+              lineHeight: '1.6',
+              margin: '0',
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: '400'
+            }}
+          >
+            This Diwali, let's celebrate not just with lights and joy, but also with kindness and compassion. <strong>Newton School of Technology</strong> with college's <strong>SETU Club</strong> is organizing a donation drive to support the <strong>Sant Ishwar Foundation – GHAR</strong>, a home that provides care, education, and love to orphaned and vulnerable girls, women with disabilities, and elderly individuals.
+          </p>
+        </motion.div>
+        
         <motion.p 
           className="hero-subtitle"
           initial={{ opacity: 0, y: 20 }}
