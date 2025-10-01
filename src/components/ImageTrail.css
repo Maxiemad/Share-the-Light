@@ -17,6 +17,8 @@
 .image-trail-row {
   display: flex;
   height: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .image-trail-items {
@@ -55,6 +57,7 @@
   object-fit: cover;
   border-radius: 15px;
   transition: all 0.3s ease;
+  display: block; /*remove inline gaps*/
 }
 
 .image-trail-img:hover {
@@ -76,26 +79,32 @@
   }
   
   .image-trail-item-wrapper {
-    width: 140px !important;
+    width: 130px !important;
     flex-shrink: 0 !important; /* Force prevent shrinking */
-    margin-right: 25px !important; /* Force consistent spacing */
-    min-width: 140px !important; /* Force minimum width */
-    max-width: 140px !important; /* Force maximum width */
+    margin-right: 18px !important; /* Force consistent spacing */
+    min-width: 130px !important; /* Force minimum width */
+    max-width: 130px !important; /* Force maximum width */
   }
   
   .image-trail-items {
-    gap: 25px !important;
-    padding: 0 25px !important;
+    gap: 16px !important;
+    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     flex-wrap: nowrap !important; /* Prevent wrapping */
   }
+  .image-trail-item { margin-right: 0 !important; }
+  .image-trail-item { flex: 0 0 130px !important; }
   
   .image-trail-item {
     flex-shrink: 0 !important; /* Force prevent item shrinking */
-    width: 140px !important; /* Force fixed width */
-    min-width: 140px !important; /* Force minimum width */
-    max-width: 140px !important; /* Force maximum width */
+    width: 130px !important; /* Force fixed width */
+    min-width: 130px !important; /* Force minimum width */
+    max-width: 130px !important; /* Force maximum width */
+  }
+  /* Disable hover scaling on touch to avoid overlap */
+  .image-trail-item-wrapper:hover {
+    transform: none !important;
   }
 }
 
@@ -113,26 +122,31 @@
   }
   
   .image-trail-item-wrapper {
-    width: 120px !important;
+    width: 110px !important;
     flex-shrink: 0 !important; /* Force prevent shrinking */
-    margin-right: 20px !important; /* Force consistent spacing */
-    min-width: 120px !important; /* Force minimum width */
-    max-width: 120px !important; /* Force maximum width */
+    margin-right: 14px !important; /* Force consistent spacing */
+    min-width: 110px !important; /* Force minimum width */
+    max-width: 110px !important; /* Force maximum width */
   }
   
   .image-trail-items {
-    gap: 20px !important;
-    padding: 0 20px !important;
+    gap: 12px !important;
+    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     flex-wrap: nowrap !important; /* Force prevent wrapping */
   }
+  .image-trail-item { margin-right: 0 !important; }
+  .image-trail-item { flex: 0 0 110px !important; }
   
   .image-trail-item {
     flex-shrink: 0 !important; /* Force prevent item shrinking */
-    width: 120px !important; /* Force fixed width */
-    min-width: 120px !important; /* Force minimum width */
-    max-width: 120px !important; /* Force maximum width */
+    width: 110px !important; /* Force fixed width */
+    min-width: 110px !important; /* Force minimum width */
+    max-width: 110px !important; /* Force maximum width */
+  }
+  .image-trail-item-wrapper:hover {
+    transform: none !important;
   }
 }
 
@@ -150,23 +164,28 @@
   }
   
   .image-trail-item-wrapper {
-    width: 100px !important;
+    width: 96px !important;
     flex-shrink: 0 !important;
-    margin-right: 15px !important;
-    min-width: 100px !important;
-    max-width: 100px !important;
+    margin-right: 12px !important;
+    min-width: 96px !important;
+    max-width: 96px !important;
   }
   
   .image-trail-items {
-    gap: 15px !important;
-    padding: 0 15px !important;
+    gap: 10px !important;
+    padding: 0 !important;
     flex-wrap: nowrap !important;
   }
+  .image-trail-item { margin-right: 0 !important; }
+  .image-trail-item { flex: 0 0 96px !important; }
   
   .image-trail-item {
     flex-shrink: 0 !important;
-    width: 100px !important;
-    min-width: 100px !important;
-    max-width: 100px !important;
+    width: 96px !important;
+    min-width: 96px !important;
+    max-width: 96px !important;
+  }
+  .image-trail-item-wrapper:hover {
+    transform: none !important;
   }
 }

@@ -96,7 +96,7 @@
 @media (max-width: 768px) {
   .footer {
     margin: 0 10px !important;
-    padding: 40px 0 20px !important;
+    padding: calc(40px + env(safe-area-inset-top)) 0 calc(20px + env(safe-area-inset-bottom)) 0 !important;
     position: relative;
     z-index: 1;
   }
@@ -144,7 +144,7 @@
 @media (max-width: 480px) {
   .footer {
     margin: 0 5px !important;
-    padding: 30px 0 15px !important;
+    padding: calc(30px + env(safe-area-inset-top)) 0 calc(15px + env(safe-area-inset-bottom)) 0 !important;
   }
   
   .footer-grid {

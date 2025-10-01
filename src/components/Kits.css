@@ -405,12 +405,20 @@
   
   .kits-grid {
     grid-template-columns: 1fr !important;
-    gap: 25px !important;
+    gap: 20px !important;
   }
   .kit-card {
     min-height: unset;
-    padding: 28px;
+    padding: 22px;
+    border-radius: 16px;
   }
+  .kit-icon { font-size: 2.2rem; margin-bottom: 14px; }
+  .kit-title { font-size: 1.4rem; margin-bottom: 8px; }
+  .kit-price { font-size: 2rem; margin: 14px 0; }
+  .kit-item { gap: 8px; padding: 8px 0; }
+  .kit-item-icon { font-size: 1rem; }
+  .kit-item-text { font-size: 0.95rem; }
+  .kit-cta { padding: 12px 20px; font-size: 1rem; }
   
   .section-title {
     font-size: 1.8rem;
@@ -426,12 +434,15 @@
   }
   
   .kits-grid {
-    gap: 15px !important;
+    gap: 14px !important;
   }
   
-  .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    line-height: 1.1;
-  }
+  .kit-card { padding: 18px; border-radius: 14px; }
+  .kit-icon { font-size: 2rem; margin-bottom: 12px; }
+  .kit-title { font-size: 1.3rem; margin-bottom: 6px; }
+  .kit-price { font-size: 1.7rem; margin: 12px 0; }
+  .kit-item { gap: 8px; padding: 6px 0; }
+  .kit-item-icon { font-size: 0.95rem; }
+  .kit-item-text { font-size: 0.9rem; }
+  .kit-cta { padding: 11px 18px; font-size: 0.95rem; }
 }
