@@ -296,25 +296,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Additional Information */}
-        <div className="additional-info">
-          <div className="info-grid">
-            <div>
-              <h4 style={{ color: '#FFD700', marginBottom: '10px' }}>Tax Benefits</h4>
-              <p style={{ margin: '0', fontSize: '0.8rem' }}>*80G available as per Income Tax Act 1961 and rules made there under.</p>
-              <p style={{ margin: '5px 0 0 0', fontSize: '0.8rem' }}>Tax Exemption Certificate Ref. No.: xxxxxxxxxxxxxxxx</p>
-            </div>
-            <div>
-              <h4 style={{ color: '#FFD700', marginBottom: '10px' }}>Support</h4>
-              <p style={{ margin: '0', fontSize: '0.8rem' }}>For more information please contact:</p>
-              <p style={{ margin: '5px 0 0 0', fontSize: '0.8rem' }}>xxxxxxxxxxxx</p>
-              <p style={{ margin: '5px 0 0 0', fontSize: '0.8rem' }}>xxxx@xxxx.xxx</p>
-            </div>
-          </div>
-          <div style={{ marginTop: '15px', textAlign: 'center', fontSize: '0.8rem' }}>
-            <p style={{ margin: '0' }}>*By proceeding, you are agreeing to our <a href="#" style={{ color: '#FFD700' }}>Terms & Conditions</a> & <a href="#" style={{ color: '#FFD700' }}>Privacy Policy</a></p>
-          </div>
-        </div>
 
         <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255, 215, 0, 0.3)', opacity: '0.8' }}>
           <p>Built by students to make a difference. © 2024 Share the Smile</p>
