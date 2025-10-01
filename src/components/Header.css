@@ -1,12 +1,13 @@
 .site-header {
   position: relative;
   background: transparent;
+  z-index: 1200;
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px 100px; /* leave space for decorative borders */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,6 +17,9 @@
   height: 40px;
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  display: block;
+  flex: 0 0 auto;
 }
 
 .header-logo.right {
@@ -23,14 +27,26 @@
 }
 
 @media (max-width: 768px) {
-  .header-container { padding: 8px 15px; }
-  .header-logo { height: 32px; }
-  .header-logo.right { height: 75px; }
+  .header-container { padding: 8px 50px; align-items: center; justify-content: space-between; gap: 10px; }
+  .header-logo { height: 32px; max-width: 40vw; }
+  .header-logo.right { height: 75px; max-width: 55vw; }
 }
 
 @media (max-width: 480px) {
-  .header-logo { height: 28px; }
-  .header-logo.right { height: 60px; }
+  .header-container { padding: 10px 36px; gap: 12px; }
+  .header-logo { height: 36px; max-width: 42vw; }
+  .header-logo.right { height: 72px; max-width: 58vw; }
+}
+
+@media (max-width: 360px) {
+  .header-container { padding: 10px 32px; gap: 8px; }
+  .header-logo { height: 34px; max-width: 40vw; }
+  .header-logo.right { height: 66px; max-width: 60vw; }
+}
+
+/* Tablet landscape width (to match decorative border 50px width) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-container { padding-left: 70px; padding-right: 70px; }
 }
 
 
