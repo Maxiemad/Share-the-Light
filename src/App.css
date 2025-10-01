@@ -33,9 +33,42 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   color: #800000;
   position: relative;
+}
+
+/* Desktop section gap optimization */
+@media (min-width: 769px) {
+  /* Reduce gaps between sections on desktop */
+  .hero-section + .why-cause-section,
+  .why-cause-section + .kits-section,
+  .kits-section + .impact-section,
+  .impact-section + .how-it-works-section,
+  .how-it-works-section + .volunteer-section,
+  .volunteer-section + .footer {
+    margin-top: -30px;
+  }
+  
+  /* Reduce section padding on desktop */
+  .why-cause-section,
+  .kits-section,
+  .impact-section,
+  .how-it-works-section,
+  .volunteer-section,
+  .footer {
+    padding: 70px 0 !important;
+  }
+  
+  /* Optimize section titles for desktop */
+  .section-title {
+    margin-bottom: 30px;
+  }
+  
+  /* Reduce container padding on desktop */
+  .container {
+    padding: 0 15px;
+  }
 }
 
 .section-title::after {

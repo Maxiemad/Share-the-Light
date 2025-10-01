@@ -37,7 +37,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="gallery-section" style={{ padding: '60px 0', background: '#fff', margin: '0 80px', position: 'relative', zIndex: 1 }}>
+    <section id="gallery" className="gallery-section" style={{ padding: '70px 0', background: '#fff', margin: '0 80px', position: 'relative', zIndex: 1 }}>
       <div className="container">
         <motion.h2 
           className="section-title"
