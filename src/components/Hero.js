@@ -135,6 +135,16 @@ const Hero = () => {
     }
   };
 
+  const handleSeeKitsClick = () => {
+    const kitsSection = document.getElementById('kits');
+    if (kitsSection) {
+      kitsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="hero" className="hero-section">
       
@@ -169,7 +179,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 1.4 }}
         >
           <button className="btn-primary">Donate Now</button>
-          <button className="btn-secondary">See Kits</button>
+          <button className="btn-secondary" onClick={handleSeeKitsClick}>See Kits</button>
           <button 
             id="audio-toggle-btn" 
             className={`btn-audio ${isAudioEnabled ? 'audio-unmuted' : 'audio-muted'}`}

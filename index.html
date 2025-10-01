@@ -59,7 +59,7 @@
             <p class="hero-subtitle">Join us in spreading joy by donating Diwali kits to children and families in need.</p>
             <div class="hero-buttons">
                 <button class="btn-primary">Donate Now</button>
-                <button class="btn-secondary">See Kits</button>
+                <button class="btn-secondary" onclick="scrollToKits()">See Kits</button>
                 <button id="audio-toggle-btn" class="btn-audio" title="Toggle Audio">
                     <img src="public/audio.png" alt="Audio" class="audio-icon">
                 </button>
@@ -320,6 +320,17 @@
 
     <script src="script.js"></script>
     <script>
+        // Scroll to kits section
+        function scrollToKits() {
+            const kitsSection = document.getElementById('kits');
+            if (kitsSection) {
+                kitsSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
         // Audio toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const audioToggleBtn = document.getElementById('audio-toggle-btn');

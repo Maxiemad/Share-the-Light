@@ -5,32 +5,32 @@ import './Gallery.css';
 const Gallery = () => {
   const galleryItems = [
     {
-      icon: "😊",
+      icon: "fas fa-smile",
       title: "Children receiving their Diwali kits",
       description: "Pure joy and excitement"
     },
     {
-      icon: "🪔",
+      icon: "fas fa-fire",
       title: "Diyas lighting up the night",
       description: "Festive atmosphere"
     },
     {
-      icon: "👥",
+      icon: "fas fa-users",
       title: "Community celebrations",
       description: "Together in spirit"
     },
     {
-      icon: "🎁",
+      icon: "fas fa-gift",
       title: "Distribution in progress",
       description: "Spreading happiness"
     },
     {
-      icon: "🎆",
+      icon: "fas fa-fire",
       title: "Fireworks and festivities",
       description: "Celebrating together"
     },
     {
-      icon: "❤️",
+      icon: "fas fa-heart",
       title: "Volunteers in action",
       description: "Making a difference"
     }
@@ -101,7 +101,7 @@ const Gallery = () => {
                     position: 'relative',
                     zIndex: 1
                   }}>
-                    {item.icon}
+                    <i className={item.icon} style={{ fontSize: '3rem' }}></i>
                   </div>
                   
                   <h3 className="gallery-title" style={{ 
@@ -174,7 +174,7 @@ const Gallery = () => {
                     position: 'relative',
                     zIndex: 1
                   }}>
-                    {item.icon}
+                    <i className={item.icon} style={{ fontSize: '3rem' }}></i>
                   </div>
                   
                   <h3 className="gallery-title" style={{ 
@@ -209,7 +209,7 @@ const Gallery = () => {
             color: '#666',
             fontStyle: 'italic'
           }}>
-            "Every smile we create is a step towards a brighter tomorrow" ✨
+            "Every smile we create is a step towards a brighter tomorrow"
           </p>
         </motion.div>
       </div>

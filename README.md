@@ -4,23 +4,23 @@ A beautiful React-based Diwali donation website with elegant curved borders and 
 
 ## Features
 
-### 🎨 **Beautiful Curved Borders**
+### **Beautiful Curved Borders**
 - Traditional Indian decorative patterns
 - S-shaped curves and intricate swirls
 - Animated glow effects
 - Responsive design for all devices
 
-### 🪔 **Enhanced Preloader**
+### **Enhanced Preloader**
 - Green diya with longer, curvy flame
 - Multi-layered flame animation
 - Smooth fade transitions
 
-### 🎆 **Fireworks & Particles**
+### **Fireworks & Particles**
 - Particles.js integration throughout the site
 - Interactive fireworks effects
 - Smooth animations with Framer Motion
 
-### 📱 **Responsive Design**
+### **Responsive Design**
 - Mobile-first approach
 - Adaptive border sizes
 - Touch-friendly interactions
@@ -134,4 +134,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Built with ❤️ for Diwali celebrations and spreading joy!** 🪔✨
+**Built with love for Diwali celebrations and spreading joy!**

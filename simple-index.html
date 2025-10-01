@@ -380,7 +380,7 @@
             <p class="hero-subtitle">Join us in spreading joy by donating Diwali kits to children and families in need.</p>
             <div class="hero-buttons">
                 <button class="btn-primary">Donate Now</button>
-                <button class="btn-secondary">See Kits</button>
+                <button class="btn-secondary" onclick="scrollToKits()">See Kits</button>
             </div>
         </div>
     </section>
@@ -438,9 +438,9 @@
                     <h3>Basic Kit</h3>
                     <div class="kit-price">₹499</div>
                     <ul class="kit-items">
-                        <li>🍭 Sweets</li>
-                        <li>🪔 Diyas</li>
-                        <li>🍫 Chocolates</li>
+                        <li><i class="fas fa-candy-cane"></i> Sweets</li>
+                        <li><i class="fas fa-fire"></i> Diyas</li>
+                        <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
                     </ul>
                     <button class="kit-donate-btn">Donate This Kit</button>
                 </div>
@@ -449,10 +449,10 @@
                     <h3>Joy Kit</h3>
                     <div class="kit-price">₹999</div>
                     <ul class="kit-items">
-                        <li>🍭 Sweets</li>
-                        <li>🪔 Diyas</li>
-                        <li>🍫 Chocolates</li>
-                        <li>🧸 Toys</li>
+                        <li><i class="fas fa-candy-cane"></i> Sweets</li>
+                        <li><i class="fas fa-fire"></i> Diyas</li>
+                        <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
+                        <li><i class="fas fa-gamepad"></i> Toys</li>
                     </ul>
                     <button class="kit-donate-btn">Donate This Kit</button>
                 </div>
@@ -461,18 +461,31 @@
                     <h3>Celebration Kit</h3>
                     <div class="kit-price">₹1499</div>
                     <ul class="kit-items">
-                        <li>🍭 Sweets</li>
-                        <li>🪔 Diyas</li>
-                        <li>🍫 Chocolates</li>
-                        <li>🧸 Toys</li>
-                        <li>📚 Books</li>
-                        <li>🏮 Lanterns</li>
-                        <li>🎁 Extra Goodies</li>
+                        <li><i class="fas fa-candy-cane"></i> Sweets</li>
+                        <li><i class="fas fa-fire"></i> Diyas</li>
+                        <li><i class="fas fa-cookie-bite"></i> Chocolates</li>
+                        <li><i class="fas fa-gamepad"></i> Toys</li>
+                        <li><i class="fas fa-book"></i> Books</li>
+                        <li><i class="fas fa-lightbulb"></i> Lanterns</li>
+                        <li><i class="fas fa-gift"></i> Extra Goodies</li>
                     </ul>
                     <button class="kit-donate-btn">Donate This Kit</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Scroll to kits section
+        function scrollToKits() {
+            const kitsSection = document.getElementById('kits');
+            if (kitsSection) {
+                kitsSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    </script>
 </body>
 </html>

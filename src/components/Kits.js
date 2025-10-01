@@ -8,9 +8,9 @@ const Kits = () => {
       name: "Basic Kit",
       price: "₹499",
       items: [
-        { icon: "🍭", text: "Sweets" },
-        { icon: "🪔", text: "Diyas" },
-        { icon: "🍫", text: "Chocolates" }
+        { icon: "fas fa-candy-cane", text: "Sweets" },
+        { icon: "fas fa-fire", text: "Diyas" },
+        { icon: "fas fa-cookie-bite", text: "Chocolates" }
       ],
       popular: false
     },
@@ -18,10 +18,10 @@ const Kits = () => {
       name: "Joy Kit",
       price: "₹999",
       items: [
-        { icon: "🍭", text: "Sweets" },
-        { icon: "🪔", text: "Diyas" },
-        { icon: "🍫", text: "Chocolates" },
-        { icon: "🧸", text: "Toys" }
+        { icon: "fas fa-candy-cane", text: "Sweets" },
+        { icon: "fas fa-fire", text: "Diyas" },
+        { icon: "fas fa-cookie-bite", text: "Chocolates" },
+        { icon: "fas fa-gamepad", text: "Toys" }
       ],
       popular: false
     },
@@ -29,13 +29,13 @@ const Kits = () => {
       name: "Celebration Kit",
       price: "₹1499",
       items: [
-        { icon: "🍭", text: "Sweets" },
-        { icon: "🪔", text: "Diyas" },
-        { icon: "🍫", text: "Chocolates" },
-        { icon: "🧸", text: "Toys" },
-        { icon: "📚", text: "Books" },
-        { icon: "🏮", text: "Lanterns" },
-        { icon: "🎁", text: "Extra Goodies" }
+        { icon: "fas fa-candy-cane", text: "Sweets" },
+        { icon: "fas fa-fire", text: "Diyas" },
+        { icon: "fas fa-cookie-bite", text: "Chocolates" },
+        { icon: "fas fa-gamepad", text: "Toys" },
+        { icon: "fas fa-book", text: "Books" },
+        { icon: "fas fa-lightbulb", text: "Lanterns" },
+        { icon: "fas fa-plus", text: "Extra Goodies" }
       ],
       popular: false
     }
@@ -68,7 +68,7 @@ const Kits = () => {
               onMouseLeave={() => setSelectedKit(null)}
             >
               
-              <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🎁</div>
+              <div style={{ fontSize: '3rem', marginBottom: '20px' }}><i className="fas fa-gift"></i></div>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', marginBottom: '10px', color: '#800000' }}>
                 {kit.name}
               </h3>
@@ -86,7 +86,7 @@ const Kits = () => {
                     gap: '10px',
                     color: '#555'
                   }}>
-                    <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
+                    <i className={item.icon} style={{ fontSize: '1.2rem' }}></i>
                     <span>{item.text}</span>
                   </li>
                 ))}
