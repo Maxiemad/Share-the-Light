@@ -275,7 +275,7 @@ const Kits = () => {
                 <p className="modal-subtitle">Scan the QR or use these bank details to transfer.</p>
                 <div className="payment-grid">
                   <div className="qr-box">
-                    <img src="/QR.jpg" alt="QR Code for payment" className="qr-image" />
+                    <img src="/qr.jpeg" alt="QR Code for payment" className="qr-image" />
                     <div className="qr-caption">UPI QR (any app)</div>
                   </div>
                   <div className="bank-box">

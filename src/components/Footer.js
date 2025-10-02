@@ -332,7 +332,7 @@ const Footer = () => {
               <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#FFD700' }}>For UPI & QR</h4>
               <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255, 140, 0, 0.2)', borderRadius: '15px', marginBottom: '10px' }}>
                 <div style={{ width: '300px', height: '300px', background: 'white', borderRadius: '12px', margin: '0 auto 25px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '25px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)' }}>
-                  <img src="/QR.jpg" alt="QR Code for payment" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src="/qr.jpeg" alt="QR Code for payment" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <p style={{ margin: '0', fontSize: '1.2rem', color: '#FFD700', fontWeight: '500' }}>ydvvipul2005@okicici</p>
               </div>
@@ -384,7 +384,7 @@ const Footer = () => {
               justifyContent: 'center'
             }}>
               <img 
-                src="/QR.jpg" 
+                src="/qr.jpeg" 
                 alt="QR Code" 
                 style={{ 
                   width: '100%', 
